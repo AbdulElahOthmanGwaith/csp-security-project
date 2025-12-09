@@ -1,0 +1,29 @@
+name: Deploy Static Website to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]      # الفرع الذي يتم النشر منه
+  workflow_dispatch:         # لتشغيله يدويًا من Actions
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # رفع ملفات الموقع كأرتيفاكت (سيتم نشرها كما هي)
+      - name: Upload Website Files
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .             # ضع مجلد الموقع (.) ينشر كل شيء
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
