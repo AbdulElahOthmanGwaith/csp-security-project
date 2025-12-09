@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشروع سياسة أمان المحتوى - أحدث التقنيات 2025</title>
+    <meta name="description" content="دليل شامل لسياسة أمان المحتوى (CSP) بأحدث التقنيات في 2025 مع أمثلة عملية وأدوات تفاعلية">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/heroicons@2.0.0/24/outline/index.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z"/>
+                </svg>
+                <span>أمان المحتوى</span>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#hero" class="nav-link">الرئيسية</a>
+                <a href="#guide" class="nav-link">الدليل</a>
+                <a href="#examples" class="nav-link">أمثلة عملية</a>
+                <a href="#tools" class="nav-link">الأدوات</a>
+                <a href="#technologies" class="nav-link">التقنيات الحديثة</a>
+            </div>
+            
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-video">
+            <video autoplay muted loop playsinline>
+                <source src="data:video/mp4;base64," type="video/mp4">
+                <!-- Fallback gradient background -->
+            </video>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>🚀 أحدث التقنيات 2025</span>
+            </div>
+            
+            <h1 class="hero-title">
+                مشروع سياسة أمان المحتوى
+                <span class="hero-subtitle">Content Security Policy</span>
+            </h1>
+            
+            <p class="hero-description">
+                دليل شامل لأحدث تقنيات حماية تطبيقات الويب من خلال سياسة أمان المحتوى المتقدمة، 
+                مع أمثلة عملية وأدوات تفاعلية لتطبيق أفضل الممارسات الأمنية في 2025
+            </p>
+            
+            <div class="hero-actions">
+                <button class="btn btn-primary" onclick="scrollToSection('guide')">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M13 5l7 7-7 7M5 5h8v2H7v10h6v2H5z"/>
+                    </svg>
+                    ابدأ التعلم
+                </button>
+                
+                <button class="btn btn-secondary" onclick="scrollToSection('tools')">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19.14,12.94C19.18,12.64 19.2,12.31 19.2,12C19.2,11.69 19.18,11.36 19.14,11.06L21.16,9.48C21.34,9.33 21.39,9.09 21.35,8.87L19.96,5.55C19.87,5.15 19.58,4.84 19.15,4.72L16.38,4.06C15.87,3.92 15.35,4.05 14.94,4.43L13.12,6.09C12.8,5.91 12.45,5.79 12.08,5.75L11.73,2.42C11.64,1.96 11.29,1.59 10.82,1.49L8.05,0.83C7.57,0.72 7.06,0.85 6.66,1.2L4.84,2.86C4.43,3.23 4.22,3.76 4.26,4.3L4.95,8.13C4.99,8.47 4.96,8.81 4.86,9.12L2.84,10.7C2.66,10.85 2.61,11.09 2.65,11.31L4.04,14.63C4.13,15.03 4.42,15.34 4.85,15.46L7.62,16.12C8.13,16.26 8.65,16.13 9.06,15.75L10.88,14.09C11.2,14.27 11.55,14.39 11.92,14.43L12.27,17.76C12.36,18.22 12.71,18.59 13.18,18.69L15.95,19.35C16.43,19.46 16.94,19.33 17.34,18.98L19.16,17.32C19.57,16.95 19.78,16.42 19.74,15.88L19.14,12.94Z"/>
+                    </svg>
+                    الأدوات التفاعلية
+                </button>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">حماية من XSS</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">2025</span>
+                    <span class="stat-label">تقنيات حديثة</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">مثال عملي</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-visual">
+            <img src="imgs/security_shield_1.axd" alt="أمان المحتوى" class="hero-image">
+        </div>
+    </section>
+
+    <!-- Guide Section -->
+    <section id="guide" class="guide">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">دليل شامل لسياسة أمان المحتوى</h2>
+                <p class="section-description">
+                    تعلم أساسيات CSP وأحدث التقنيات في حماية تطبيقات الويب من التهديدات السيبرانية
+                </p>
+            </div>
+
+            <div class="guide-grid">
+                <!-- CSP Fundamentals -->
+                <div class="guide-card">
+                    <div class="card-icon">
+                        <img src="imgs/web_security_0.png" alt="أمن الويب" class="icon-image">
+                    </div>
+                    <h3 class="card-title">أساسيات CSP</h3>
+                    <p class="card-description">
+                        فهم مبادئ سياسة أمان المحتوى وكيفية عملها لحماية تطبيقك من هجمات XSS وCode Injection
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag">مبتدئ</span>
+                        <span class="tag">أساسي</span>
+                    </div>
+                    <button class="card-btn" onclick="showSection('fundamentals')">تعلم المزيد</button>
+                </div>
+
+                <!-- CSP Level 3 -->
+                <div class="guide-card">
+                    <div class="card-icon">
+                        <img src="imgs/csp_code_7.jpg" alt="CSP Level 3" class="icon-image">
+                    </div>
+                    <h3 class="card-title">CSP Level 3</h3>
+                    <p class="card-description">
+                        استكشاف أحدث ميزات CSP Level 3 بما في ذلك Trusted Types وScript Sources المحسنة
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag tag-advanced">متقدم</span>
+                        <span class="tag tag-new">جديد 2025</span>
+                    </div>
+                    <button class="card-btn" onclick="showSection('csp3')">استكشف الآن</button>
+                </div>
+
+                <!-- Trusted Types -->
+                <div class="guide-card">
+                    <div class="card-icon">
+                        <img src="imgs/trusted_types_7.jpg" alt="Trusted Types" class="icon-image">
+                    </div>
+                    <h3 class="card-title">Trusted Types API</h3>
+                    <p class="card-description">
+                        حماية متقدمة من DOM XSS باستخدام Trusted Types API في المتصفحات الحديثة
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag tag-advanced">متقدم</span>
+                        <span class="tag tag-new">جديد 2025</span>
+                    </div>
+                    <button class="card-btn" onclick="showSection('trusted-types')">تعلم الآن</button>
+                </div>
+
+                <!-- Implementation -->
+                <div class="guide-card">
+                    <div class="card-icon">
+                        <img src="imgs/web_security_8.png" alt="تنفيذ CSP" class="icon-image">
+                    </div>
+                    <h3 class="card-title">التنفيذ العملي</h3>
+                    <p class="card-description">
+                        خطوات عملية لتطبيق CSP في مشاريعك مع أمثلة كود حقيقية وأدوات الاختبار
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag">عملي</span>
+                        <span class="tag">تطبيقي</span>
+                    </div>
+                    <button class="card-btn" onclick="showSection('implementation')">ابدأ التنفيذ</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Examples Section -->
+    <section id="examples" class="examples">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">أمثلة عملية قابلة للتجربة</h2>
+                <p class="section-description">
+                    جرب أمثلة حقيقية لسياسة أمان المحتوى واختبر تأثيرها على أمان التطبيق
+                </p>
+            </div>
+
+            <div class="examples-tabs">
+                <button class="tab-btn active" onclick="showExampleTab('basic')">CSP الأساسي</button>
+                <button class="tab-btn" onclick="showExampleTab('advanced')">CSP المتقدم</button>
+                <button class="tab-btn" onclick="showExampleTab('trusted-types')">Trusted Types</button>
+                <button class="tab-btn" onclick="showExampleTab('headers')">الأمان المتقدم</button>
+            </div>
+
+            <!-- Basic CSP Example -->
+            <div id="basic-example" class="example-content active">
+                <div class="code-example">
+                    <div class="example-header">
+                        <h3>مثال CSP أساسي - حماية من XSS</h3>
+                        <div class="example-actions">
+                            <button class="btn-icon" onclick="copyCode('basic-csp')">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="code-container">
+                        <pre><code id="basic-csp" class="language-http">// إعداد CSP أساسي في Header
+Content-Security-Policy: 
+  default-src 'self'; 
+  script-src 'self' 'unsafe-inline'; 
+  style-src 'self' 'unsafe-inline'; 
+  img-src 'self' data: https:; 
+  font-src 'self' https://fonts.gstatic.com;
+  connect-src 'self' https://api.example.com;
+  frame-ancestors 'none';
+  base-uri 'self';
+  form-action 'self';
+
+// أو عبر Meta Tag
+&lt;meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self' 'unsafe-inline';
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' data: https:;
+"&gt;</code></pre>
+                    </div>
+                    
+                    <div class="example-demo">
+                        <h4>🛡️ نتائج الحماية:</h4>
+                        <ul>
+                            <li>✅ منع تحميل السكريبت من مصادر خارجية</li>
+                            <li>✅ حماية من معظم هجمات XSS</li>
+                            <li>✅ التحكم في مصادر الصور والموارد</li>
+                            <li>⚠️ يتطلب مراجعة للمصادر المسموحة</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced CSP Example -->
+            <div id="advanced-example" class="example-content">
+                <div class="code-example">
+                    <div class="example-header">
+                        <h3>CSP متقدم - حماية شاملة 2025</h3>
+                        <div class="example-actions">
+                            <button class="btn-icon" onclick="copyCode('advanced-csp')">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="code-container">
+                        <pre><code id="advanced-csp" class="language-http">// CSP متقدم مع ميزات 2025
+Content-Security-Policy: 
+  // المصادر الأساسية
+  default-src 'self';
+  base-uri 'self';
+  frame-ancestors 'none';
+  
+  // السكريبت - حماية متقدمة
+  script-src 'self' 
+    'nonce-{random-nonce}' 
+    'strict-dynamic'
+    https://cdn.jsdelivr.net
+    https://unpkg.com;
+    
+  // الأنماط - CSS آمن
+  style-src 'self' 
+    'unsafe-inline'
+    https://fonts.googleapis.com
+    https://cdn.jsdelivr.net;
+    
+  // الصور والوسائط
+  img-src 'self' 
+    data: 
+    https: 
+    blob:;
+  media-src 'self' https:;
+  font-src 'self' 
+    https://fonts.gstatic.com
+    https://cdn.jsdelivr.net;
+    
+  // الشبكات والاتصالات
+  connect-src 'self' 
+    wss:
+    https://api.example.com
+    https://*.analytics.com;
+    
+  // الأطر والإطارات الفرعية
+  frame-src 'none';
+  object-src 'none';
+  worker-src 'self' blob:;
+  
+  // ميزات المتصفح
+  form-action 'self';
+  upgrade-insecure-requests;
+  block-all-mixed-content;
+  report-uri /csp-report;
+  
+  // منع التحميل التلقائي
+  autoplay-src 'none';
+  camera-src 'none';
+  microphone-src 'none';
+  geolocation-src 'none';</code></pre>
+                    </div>
+                    
+                    <div class="example-demo">
+                        <h4>🚀 ميزات الحماية المتقدمة:</h4>
+                        <ul>
+                            <li>✅ Nonce-based script protection</li>
+                            <li>✅ Strict Dynamic للسكريبت الآمن</li>
+                            <li>✅ حماية من Mixed Content</li>
+                            <li>✅ منع الوصول للكاميرا والميكروفون</li>
+                            <li>✅ WebSocket Secure connections</li>
+                            <li>✅ Worker isolation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trusted Types Example -->
+            <div id="trusted-types-example" class="example-content">
+                <div class="code-example">
+                    <div class="example-header">
+                        <h3>Trusted Types API - حماية DOM من XSS</h3>
+                        <div class="example-actions">
+                            <button class="btn-icon" onclick="copyCode('trusted-types-code')">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="code-container">
+                        <pre><code id="trusted-types-code" class="language-javascript">// تفعيل Trusted Types
+if (window.trustedTypes) {
+  // إنشاء Policy للـ HTML
+  const htmlPolicy = trustedTypes.createPolicy('myPolicy', {
+    createHTML: (input) => {
+      // تنظيف وتحقق من HTML
+      return DOMPurify.sanitize(input, {
+        ALLOWED_TAGS: ['b', 'i', 'em', 'strong'],
+        ALLOWED_ATTR: []
+      });
+    }
+  });
+
+  // إنشاء Policy للـ URLs
+  const urlPolicy = trustedTypes.createPolicy('urlPolicy', {
+    createURL: (input) => {
+      const url = new URL(input);
+      if (url.protocol === 'javascript:') {
+        throw new Error('Blocked dangerous protocol');
+      }
+      return url;
+    }
+  });
+
+  // إنشاء Policy للـ Scripts
+  const scriptPolicy = trustedTypes.createPolicy('scriptPolicy', {
+    createScript: (input) => {
+      if (input.includes('<script>')) {
+        throw new Error('Script tags not allowed');
+      }
+      return input;
+    }
+  });
+}
+
+// استخدام آمن للـ Trusted Types
+function safeElementCreation() {
+  // استخدام Trusted HTML
+  const safeHTML = htmlPolicy.createHTML(
+    '&lt;b&gt;نص آمن&lt;/b&gt; &lt;i&gt;بخط مائل&lt;/i&gt;'
+  );
+  element.innerHTML = safeHTML;
+
+  // استخدام Trusted URL
+  const safeURL = urlPolicy.createURL('https://example.com');
+  link.href = safeURL;
+
+  // استخدام Trusted Script
+  const safeScript = scriptPolicy.createScript(
+    'console.log("Hello from trusted script");'
+  );
+  // script.textContent = safeScript;
+}</code></pre>
+                    </div>
+                    
+                    <div class="example-demo">
+                        <h4>🔒 فوائد Trusted Types:</h4>
+                        <ul>
+                            <li>✅ حماية كاملة من DOM XSS</li>
+                            <li>✅ التحقق من صحة HTML قبل الإدراج</li>
+                            <li>✅ منع javascript: URLs الخطيرة</li>
+                            <li>✅ عزل الـ JavaScript غير الموثوق</li>
+                            <li>✅ متوافق مع CSP</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Headers Example -->
+            <div id="headers-example" class="example-content">
+                <div class="code-example">
+                    <div class="example-header">
+                        <h3>رؤوس الأمان المتقدمة - طبقة حماية شاملة</h3>
+                        <div class="example-actions">
+                            <button class="btn-icon" onclick="copyCode('headers-code')">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="code-container">
+                        <pre><code id="headers-code" class="language-http">// مجموعة شاملة من رؤوس الأمان 2025
+// Content Security Policy
+Content-Security-Policy: 
+  default-src 'self';
+  script-src 'self' 'nonce-{random}' 'strict-dynamic';
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  img-src 'self' data: https:;
+  font-src 'self' https://fonts.gstatic.com;
+  connect-src 'self' wss: https:;
+  frame-ancestors 'none';
+  base-uri 'self';
+  form-action 'self';
+  upgrade-insecure-requests;
+  block-all-mixed-content;
+
+// Cross-Origin Policies
+Cross-Origin-Embedder-Policy: require-corp
+Cross-Origin-Opener-Policy: same-origin
+Cross-Origin-Resource-Policy: same-origin
+
+// Feature Policies (دعم محدود، استخدم بدلاً منه Permissions Policy)
+Feature-Policy: 
+  geolocation 'none';
+  microphone 'none';
+  camera 'none';
+  fullscreen 'self';
+  autoplay 'none';
+
+// Permissions Policy (البديل الحديث)
+Permissions-Policy: 
+  geolocation=(),
+  microphone=(),
+  camera=(),
+  payment=(),
+  usb=(),
+  accelerometer=(),
+  gyroscope=(),
+  magnetometer=(),
+  fullscreen=(self);
+
+// HTTP Strict Transport Security
+Strict-Transport-Security: 
+  max-age=31536000; 
+  includeSubDomains; 
+  preload;
+
+// XSS Protection
+X-XSS-Protection: 1; mode=block
+
+// Content Type Sniffing Protection
+X-Content-Type-Options: nosniff
+
+// Frame Protection
+X-Frame-Options: DENY
+
+// Referrer Policy
+Referrer-Policy: strict-origin-when-cross-origin
+
+// Cache Control for Sensitive Pages
+Cache-Control: no-cache, no-store, must-revalidate
+Pragma: no-cache
+
+// Hide Server Information
+Server: (remove or obfuscate)
+X-Powered-By: (remove)
+
+// CORS Configuration
+Access-Control-Allow-Origin: https://yourdomain.com
+Access-Control-Allow-Methods: GET, POST, PUT, DELETE
+Access-Control-Allow-Headers: Content-Type, Authorization
+Access-Control-Allow-Credentials: true
+
+// Trusted Types (في JavaScript)
+Content-Security-Policy: require-trusted-types-for 'script'</code></pre>
+                    </div>
+                    
+                    <div class="example-demo">
+                        <h4>🛡️ حماية شاملة مع:</h4>
+                        <ul>
+                            <li>✅ Cross-Origin Isolation</li>
+                            <li>✅ Feature Permissions Control</li>
+                            <li>✅ HTTPS Enforcement</li>
+                            <li>✅ XSS Prevention</li>
+                            <li>✅ Clickjacking Protection</li>
+                            <li>✅ MIME Type Validation</li>
+                            <li>✅ Trusted Types Enforcement</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="tools">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">الأدوات التفاعلية</h2>
+                <p class="section-description">
+                    أدوات عملية لاختبار وتطبيق سياسة أمان المحتوى في مشاريعك
+                </p>
+            </div>
+
+            <div class="tools-grid">
+                <!-- CSP Builder -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <img src="imgs/csp_code_3.png" alt="CSP Builder" class="tool-icon">
+                        <h3>CSP Builder</h3>
+                    </div>
+                    <p class="tool-description">
+                        منشئ تفاعلي لبناء سياسة أمان المحتوى المناسبة لمشروعك
+                    </p>
+                    <div class="tool-features">
+                        <span class="feature">✓ واجهة بصرية</span>
+                        <span class="feature">✓ اختبارات فورية</span>
+                        <span class="feature">✓ تصدير الكود</span>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCSPBuilder()">استخدام الأداة</button>
+                </div>
+
+                <!-- CSP Tester -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <img src="imgs/browser_security_6.png" alt="CSP Tester" class="tool-icon">
+                        <h3>CSP Tester</h3>
+                    </div>
+                    <p class="tool-description">
+                        اختبار سياسة أمان المحتوى وتحديد نقاط الضعف والثغرات
+                    </p>
+                    <div class="tool-features">
+                        <span class="feature">✓ تحليل السياسات</span>
+                        <span class="feature">✓ تقارير مفصلة</span>
+                        <span class="feature">✓ توصيات للتحسين</span>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCSPTester()">اختبار السياسة</button>
+                </div>
+
+                <!-- Security Scanner -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <img src="imgs/cyber_threats_0.png" alt="Security Scanner" class="tool-icon">
+                        <h3>Security Scanner</h3>
+                    </div>
+                    <p class="tool-description">
+                        فحص شامل لأمان التطبيق وتحديد التهديدات المحتملة
+                    </p>
+                    <div class="tool-features">
+                        <span class="feature">✓ فحص XSS</span>
+                        <span class="feature">✓ تحليل Headers</span>
+                        <span class="feature">✓ تقييم المخاطر</span>
+                    </div>
+                    <button class="btn btn-primary" onclick="openSecurityScanner()">بدء الفحص</button>
+                </div>
+
+                <!-- Code Analyzer -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <img src="imgs/xss_prevention_3.png" alt="Code Analyzer" class="tool-icon">
+                        <h3>Code Analyzer</h3>
+                    </div>
+                    <p class="tool-description">
+                        تحليل كود JavaScript وتطبيق أفضل الممارسات الأمنية
+                    </p>
+                    <div class="tool-features">
+                        <span class="feature">✓ تحليل الكود</span>
+                        <span class="feature">✓ اقتراحات التحسين</span>
+                        <span class="feature">✓ Trusted Types</span>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCodeAnalyzer()">تحليل الكود</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Technologies Section -->
+    <section id="technologies" class="technologies">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">التقنيات الحديثة 2025</h2>
+                <p class="section-description">
+                    استكشاف أحدث تقنيات أمان الويب والممارسات المتقدمة في حماية التطبيقات
+                </p>
+            </div>
+
+            <div class="technologies-grid">
+                <!-- CSP Level 3 -->
+                <div class="tech-card">
+                    <div class="tech-badge">CSP 3.0</div>
+                    <img src="imgs/web_security_4.jpg" alt="CSP Level 3" class="tech-image">
+                    <h3>CSP Level 3</h3>
+                    <p>أحدث إصدار من سياسة أمان المحتوى مع ميزات محسنة مثل strict-dynamic وtrusted-types</p>
+                    <ul class="tech-features">
+                        <li>Strict Dynamic Policy</li>
+                        <li>Trusted Types Integration</li>
+                        <li>Script Hash Improvements</li>
+                        <li>Dynamic Source Validation</li>
+                    </ul>
+                </div>
+
+                <!-- Trusted Types -->
+                <div class="tech-card">
+                    <div class="tech-badge">Modern API</div>
+                    <img src="imgs/trusted_types_0.png" alt="Trusted Types" class="tech-image">
+                    <h3>Trusted Types API</h3>
+                    <p>حماية متقدمة من DOM XSS من خلال التحقق من صحة البيانات قبل إدراجها في DOM</p>
+                    <ul class="tech-features">
+                        <li>HTML Sanitization</li>
+                        <li>URL Validation</li>
+                        <li>Script Isolation</li>
+                        <li>Policy-based Protection</li>
+                    </ul>
+                </div>
+
+                <!-- Cross-Origin Isolation -->
+                <div class="tech-card">
+                    <div class="tech-badge">Security</div>
+                    <img src="imgs/data_protection_5.jpg" alt="Cross-Origin Isolation" class="tech-image">
+                    <h3>Cross-Origin Isolation</h3>
+                    <p>عزل المصادر المتقاطعة لحماية من هجمات Spectre وتحسين أمان الذاكرة</p>
+                    <ul class="tech-features">
+                        <li>COEP/COOP Headers</li>
+                        <li>CORP Resource Policy</li>
+                        <li>SharedArrayBuffer Support</li>
+                        <li>Performance Isolation</li>
+                    </ul>
+                </div>
+
+                <!-- WebAssembly Security -->
+                <div class="tech-card">
+                    <div class="tech-badge">Performance</div>
+                    <img src="imgs/ssl_security_5.png" alt="WebAssembly Security" class="tech-image">
+                    <h3>WebAssembly Security</h3>
+                    <p>أمان متقدم لتطبيقات WebAssembly مع sandbox isolation وتحقق من التوقيع الرقمي</p>
+                    <ul class="tech-features">
+                        <li>Sandbox Execution</li>
+                        <li>Digital Signature Verification</li>
+                        <li>Memory Safety</li>
+                        <li>Capability-based Security</li>
+                    </ul>
+                </div>
+
+                <!-- Subresource Integrity -->
+                <div class="tech-card">
+                    <div class="tech-badge">Integrity</div>
+                    <img src="imgs/data_protection_1.jpeg" alt="SRI" class="tech-image">
+                    <h3>Subresource Integrity</h3>
+                    <p>ضمان سلامة الموارد الخارجية من خلال التحقق من hashes التشفيرية</p>
+                    <ul class="tech-features">
+                        <li>Crypto Hash Validation</li>
+                        <li>External Resource Protection</li>
+                        <li>CDN Security</li>
+                        <li>Integrity Attribute</li>
+                    </ul>
+                </div>
+
+                <!-- Permissions Policy -->
+                <div class="tech-card">
+                    <div class="tech-badge">Access Control</div>
+                    <img src="imgs/browser_security_8.png" alt="Permissions Policy" class="tech-image">
+                    <h3>Permissions Policy</h3>
+                    <p>تحكم دقيق في صلاحيات الوصول للميزات الحساسة مثل الكاميرا والميكروفون</p>
+                    <ul class="tech-features">
+                        <li>Feature Granular Control</li>
+                        <li>Permission Management</li>
+                        <li>User Consent Integration</li>
+                        <li>Cross-origin Permissions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>مشروع سياسة أمان المحتوى</h4>
+                    <p>دليل شامل لأحدث تقنيات حماية تطبيقات الويب من التهديدات السيبرانية</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>روابط مفيدة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#guide">الدليل الشامل</a></li>
+                        <li><a href="#examples">أمثلة عملية</a></li>
+                        <li><a href="#tools">الأدوات التفاعلية</a></li>
+                        <li><a href="#technologies">التقنيات الحديثة</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>المصادر</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP" target="_blank">MDN CSP Documentation</a></li>
+                        <li><a href="https://w3c.github.io/webappsec-csp/" target="_blank">W3C CSP Specification</a></li>
+                        <li><a href="https://web.dev/trusted-types/" target="_blank">Trusted Types Guide</a></li>
+                        <li><a href="https://owasp.org/www-project-secure-headers/" target="_blank">OWASP Secure Headers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <p>لديك استفسار أو اقتراح؟ تواصل معنا لمساعدتك في تطبيق أفضل الممارسات الأمنية</p>
+                    <a href="mailto:contact@content-security-policy.com" class="footer-email">contact@content-security-policy.com</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 مشروع سياسة أمان المحتوى. جميع الحقوق محفوظة.</p>
+                <p>تم التطوير بأحدث التقنيات لضمان أقصى درجات الأمان</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CSP Builder Modal -->
+    <div id="cspBuilderModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>CSP Builder - منشئ سياسة أمان المحتوى</h3>
+                <button class="modal-close" onclick="closeModal('cspBuilderModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="builder-tabs">
+                    <button class="tab-btn active" onclick="showBuilderTab('basic')">إعدادات أساسية</button>
+                    <button class="tab-btn" onclick="showBuilderTab('advanced')">إعدادات متقدمة</button>
+                    <button class="tab-btn" onclick="showBuilderTab('testing')">اختبار السياسة</button>
+                </div>
+                
+                <div id="basic-builder" class="builder-tab active">
+                    <div class="builder-section">
+                        <h4>المصادر المسموحة</h4>
+                        <div class="form-group">
+                            <label>JavaScript Sources:</label>
+                            <input type="text" id="jsSources" placeholder="'self' 'unsafe-inline' https://cdn.example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>CSS Sources:</label>
+                            <input type="text" id="cssSources" placeholder="'self' 'unsafe-inline' https://fonts.googleapis.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Image Sources:</label>
+                            <input type="text" id="imgSources" placeholder="'self' data: https:">
+                        </div>
+                        <div class="form-group">
+                            <label>Font Sources:</label>
+                            <input type="text" id="fontSources" placeholder="'self' https://fonts.gstatic.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Connect Sources:</label>
+                            <input type="text" id="connectSources" placeholder="'self' wss: https://api.example.com">
+                        </div>
+                    </div>
+                    
+                    <div class="builder-section">
+                        <h4>إعدادات الحماية</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" id="blockMixedContent"> Block Mixed Content</label>
+                            <label><input type="checkbox" id="upgradeInsecure"> Upgrade Insecure Requests</label>
+                            <label><input type="checkbox" id="frameAncestors"> Allow Frame Embedding</label>
+                            <label><input type="checkbox" id="strictDynamic"> Enable Strict Dynamic</label>
+                        </div>
+                    </div>
+                    
+                    <div class="generated-csp">
+                        <h4>سياسة الأمان المُولدة:</h4>
+                        <pre><code id="generatedCSP">default-src 'self';</code></pre>
+                        <button class="btn btn-primary" onclick="copyGeneratedCSP()">نسخ السياسة</button>
+                    </div>
+                </div>
+                
+                <div id="advanced-builder" class="builder-tab">
+                    <div class="builder-section">
+                        <h4>الإعدادات المتقدمة</h4>
+                        <div class="form-group">
+                            <label>Nonce للسكريبت:</label>
+                            <input type="text" id="scriptNonce" placeholder="اختياري - سيتم توليده تلقائياً">
+                        </div>
+                        <div class="form-group">
+                            <label>Hashes للسكريبت:</label>
+                            <textarea id="scriptHashes" placeholder="sha256-..., sha384-..., sha512-..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Worker Sources:</label>
+                            <input type="text" id="workerSources" placeholder="'self' blob:">
+                        </div>
+                        <div class="form-group">
+                            <label>Media Sources:</label>
+                            <input type="text" id="mediaSources" placeholder="'self' https:">
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="testing-builder" class="builder-tab">
+                    <div class="builder-section">
+                        <h4>اختبار السياسة</h4>
+                        <div class="test-results">
+                            <div class="test-item">
+                                <span class="test-status success">✓</span>
+                                <span>Default-src Policy</span>
+                            </div>
+                            <div class="test-item">
+                                <span class="test-status success">✓</span>
+                                <span>Script-src Validation</span>
+                            </div>
+                            <div class="test-item">
+                                <span class="test-status warning">⚠</span>
+                                <span>Unsafe-inline Warning</span>
+                            </div>
+                            <div class="test-item">
+                                <span class="test-status error">✗</span>
+                                <span>External Scripts Blocked</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/tools.js"></script>
+</body>
+</html>

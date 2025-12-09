@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة الأمان السيبراني المتطورة 2025 | Ultimate Security Platform</title>
+    <meta name="description" content="منصة الأمان السيبراني الأكثر تطوراً في 2025 مع تقنيات الذكاء الاصطناعي والتحليل المتقدم">
+    <meta name="keywords" content="أمان سيبراني, تحليل الثغرات, ذكاء اصطناعي, أمان ويب, حماية">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="data:application/json,{&quot;name&quot;:&quot;Ultimate Security Platform&quot;,&quot;short_name&quot;:&quot;Security Pro&quot;,&quot;description&quot;:&quot;منصة الأمان السيبراني المتطورة&quot;,&quot;start_url&quot;:&quot;./ultimate-security-platform.html&quot;,&quot;display&quot;:&quot;standalone&quot;,&quot;background_color&quot;:&quot;#0a0a0a&quot;,&quot;theme_color&quot;:&quot;#00e0d5&quot;,&quot;icons&quot;:[{&quot;src&quot;:&quot;data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%2300e0d5'/><text y='.9em' font-size='90' fill='white'>🔒</text></svg>&quot;,&quot;sizes&quot;:&quot;192x192&quot;,&quot;type&quot;:&quot;image/svg+xml&quot;}]}">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #00e0d5;
+            --secondary-color: #1a1a1a;
+            --accent-color: #9d4edd;
+            --danger-color: #ff6b6b;
+            --warning-color: #ffa500;
+            --success-color: #4CAF50;
+            --text-color: #ffffff;
+            --text-secondary: #b0b0b0;
+            --bg-gradient: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2d2d2d 100%);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 8px 32px rgba(0, 224, 213, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Animated background particles */
+        .bg-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--primary-color);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Header */
+        .header {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(20px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-links a:hover::before {
+            left: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+            background: var(--primary-color);
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--glass-bg);
+            border-radius: 25px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--success-color);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Main content */
+        .main {
+            margin-top: 80px;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: brightness(1); }
+            to { filter: brightness(1.2); }
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .stat-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* System Cards */
+        .systems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .system-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .system-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--danger-color));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .system-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .system-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 224, 213, 0.2);
+        }
+
+        .system-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .system-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            opacity: 0.1;
+        }
+
+        .system-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .system-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .system-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .system-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .system-features li::before {
+            content: '✓';
+            color: var(--success-color);
+            font-weight: bold;
+        }
+
+        .system-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: var(--secondary-color);
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .system-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .system-btn:hover::before {
+            left: 100%;
+        }
+
+        .system-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 224, 213, 0.3);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: var(--secondary-color);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px) scale(0.9); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: var(--danger-color);
+            color: white;
+        }
+
+        /* Analysis Interface */
+        .analysis-interface {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .code-input {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 1rem;
+        }
+
+        .code-textarea {
+            width: 100%;
+            min-height: 300px;
+            background: transparent;
+            border: none;
+            color: var(--text-color);
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            resize: vertical;
+            outline: none;
+        }
+
+        .results-panel {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 1rem;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .result-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-right: 4px solid var(--primary-color);
+        }
+
+        .result-item.critical {
+            border-right-color: var(--danger-color);
+        }
+
+        .result-item.high {
+            border-right-color: var(--warning-color);
+        }
+
+        .result-item.medium {
+            border-right-color: var(--accent-color);
+        }
+
+        .result-item.low {
+            border-right-color: var(--success-color);
+        }
+
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-type {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .result-severity {
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .severity-critical {
+            background: var(--danger-color);
+            color: white;
+        }
+
+        .severity-high {
+            background: var(--warning-color);
+            color: white;
+        }
+
+        .severity-medium {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .severity-low {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .result-confidence {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* 3D Canvas Container */
+        .canvas-container {
+            width: 100%;
+            height: 500px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .canvas-fallback {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        /* Loading Spinner */
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--glass-border);
+            border-top: 3px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 2rem auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--glass-bg);
+            border-top: 1px solid var(--glass-border);
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .systems-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .analysis-interface {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Notification System */
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: var(--secondary-color);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 1rem;
+            max-width: 300px;
+            z-index: 3000;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification.success {
+            border-left: 4px solid var(--success-color);
+        }
+
+        .notification.warning {
+            border-left: 4px solid var(--warning-color);
+        }
+
+        .notification.error {
+            border-left: 4px solid var(--danger-color);
+        }
+
+        .notification-header {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .notification-message {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background Particles -->
+    <div class="bg-particles" id="bgParticles"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">🔒</div>
+                <span>منصة الأمان المتطورة</span>
+            </a>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#systems">الأنظمة</a></li>
+                    <li><a href="#analysis">التحليل</a></li>
+                    <li><a href="#training">التدريب</a></li>
+                    <li><a href="#dashboard">لوحة التحكم</a></li>
+                </ul>
+            </nav>
+            
+            <div class="status-indicator">
+                <div class="status-dot" id="statusDot"></div>
+                <span id="statusText">متصل</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero" id="home">
+                <h1 class="hero-title">منصة الأمان السيبراني المتطورة 2025</h1>
+                <p class="hero-subtitle">
+                    أقوى منصة أمان سيبراني في العالم مع تقنيات الذكاء الاصطناعي المتقدمة 
+                    والتحليل الفوري للثغرات الأمنية
+                </p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="threatsDetected">847</div>
+                        <div class="stat-label">تهديد مكتشف اليوم</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="analysisCount">12,847</div>
+                        <div class="stat-label">تحليل مكتمل</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="accuracyRate">99.8%</div>
+                        <div class="stat-label">دقة الكشف</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="responseTime">0.3s</div>
+                        <div class="stat-label">متوسط وقت الاستجابة</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Security Systems -->
+            <section class="systems" id="systems">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: var(--primary-color);">
+                    الأنظمة المتقدمة
+                </h2>
+                
+                <div class="systems-grid">
+                    <!-- WebAssembly Security Analyzer -->
+                    <div class="system-card" onclick="openSystemModal('wasm')">
+                        <div class="system-icon" style="background: linear-gradient(135deg, #00e0d5, #9d4edd);">
+                            🚀
+                        </div>
+                        <h3 class="system-title">محلل الأمان عالي الأداء</h3>
+                        <p class="system-description">
+                            تحليل الثغرات باستخدام WebAssembly للسرعة القصوى والدقة في الكشف
+                        </p>
+                        <ul class="system-features">
+                            <li>تحليل فوري بالذكاء الاصطناعي</li>
+                            <li>كشف متقدم لجميع أنواع الثغرات</li>
+                            <li>تقييم مخاطر ذكي</li>
+                            <li>تقارير مفصلة وشاملة</li>
+                        </ul>
+                        <button class="system-btn">تشغيل المحلل</button>
+                    </div>
+
+                    <!-- AI Behavioral Analyzer -->
+                    <div class="system-card" onclick="openSystemModal('behavioral')">
+                        <div class="system-icon" style="background: linear-gradient(135deg, #9d4edd, #ff6b6b);">
+                            🤖
+                        </div>
+                        <h3 class="system-title">محلل السلوك الذكي</h3>
+                        <p class="system-description">
+                            تحليل أنماط السلوك المشبوه والكشف عن التهديدات الناشئة
+                        </p>
+                        <ul class="system-features">
+                            <li>مراقبة السلوك في الوقت الفعلي</li>
+                            <li>كشف البوتات والهجمات الآلية</li>
+                            <li>تحليل التهديدات المتقدمة</li>
+                            <li>استجابة تلقائية ذكية</li>
+                        </ul>
+                        <button class="system-btn">تفعيل المراقبة</button>
+                    </div>
+
+                    <!-- 3D Interactive Interface -->
+                    <div class="system-card" onclick="openSystemModal('3d')">
+                        <div class="system-icon" style="background: linear-gradient(135deg, #ff6b6b, #ffa500);">
+                            🎮
+                        </div>
+                        <h3 class="system-title">الواجهة التفاعلية ثلاثية الأبعاد</h3>
+                        <p class="system-description">
+                            واجهة مستخدم متطورة مع تصور ثلاثي الأبعاد للبيانات الأمنية
+                        </p>
+                        <ul class="system-features">
+                            <li>تصور ثلاثي الأبعاد للتهديدات</li>
+                            <li>تفاعل بالإيماءات واللمس</li>
+                            <li>دعم الواقع الافتراضي والمعزز</li>
+                            <li>تجربة مستخدم غامرة</li>
+                        </ul>
+                        <button class="system-btn">تشغيل الواجهة</button>
+                    </div>
+
+                    <!-- Service Worker Manager -->
+                    <div class="system-card" onclick="openSystemModal('sw')">
+                        <div class="system-icon" style="background: linear-gradient(135deg, #4CAF50, #00e0d5);">
+                            🌐
+                        </div>
+                        <h3 class="system-title">مدير الخدمة المتقدم</h3>
+                        <p class="system-description">
+                            إمكانيات العمل دون اتصال ومزامنة البيانات الذكية
+                        </p>
+                        <ul class="system-features">
+                            <li>عمل دون اتصال بالإنترنت</li>
+                            <li>مزامنة تلقائية للبيانات</li>
+                            <li>إشعارات فورية</li>
+                            <li>تطبيق ويب تقدمي (PWA)</li>
+                        </ul>
+                        <button class="system-btn">تفعيل الخدمات</button>
+                    </div>
+
+                    <!-- Advanced Vulnerability Detector -->
+                    <div class="system-card" onclick="openSystemModal('vuln')">
+                        <div class="system-icon" style="background: linear-gradient(135deg, #ffa500, #ff0000);">
+                            🔍
+                        </div>
+                        <h3 class="system-title">كاشف الثغرات المتطور</h3>
+                        <p class="system-description">
+                            تحليل لغوي طبيعي ذكي لكشف الثغرات المعقدة والمتطورة
+                        </p>
+                        <ul class="system-features">
+                            <li>تحليل لغوي طبيعي (NLP)</li>
+                            <li>كشف الثغرات المتقدمة</li>
+                            <li>تعلم آلي متطور</li>
+                            <li>تحليل سياقي ذكي</li>
+                        </ul>
+                        <button class="system-btn">بدء الكشف</button>
+                    </div>
+
+                    <!-- Integrated Dashboard -->
+                    <div class="system-card" onclick="openSystemModal('dashboard')">
+                        <div class="system-icon" style="background: linear-gradient(135deg, #00e0d5, #4CAF50);">
+                            📊
+                        </div>
+                        <h3 class="system-title">لوحة التحكم المتكاملة</h3>
+                        <p class="system-description">
+                            لوحة تحكم شاملة تجمع جميع الأنظمة في واجهة موحدة
+                        </p>
+                        <ul class="system-features">
+                            <li>مراقبة شاملة لجميع الأنظمة</li>
+                            <li>تقارير تفاعلية</li>
+                            <li>إحصائيات متقدمة</li>
+                            <li>تنبيهات ذكية</li>
+                        </ul>
+                        <button class="system-btn">عرض اللوحة</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal for System Interfaces -->
+    <div class="modal" id="systemModal">
+        <div class="modal-content" style="max-width: 95vw;">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">نظام الأمان</h2>
+                <button class="close-btn" onclick="closeSystemModal()">&times;</button>
+            </div>
+            <div id="modalBody">
+                <!-- System interface will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notificationContainer"></div>
+
+    <!-- Scripts -->
+    <script>
+        // Global variables
+        let wasmAnalyzer = null;
+        let behavioralAnalyzer = null;
+        let security3DInterface = null;
+        let serviceWorkerManager = null;
+        let vulnDetector = null;
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', async function() {
+            console.log('🚀 Initializing Ultimate Security Platform...');
+            
+            // Initialize background particles
+            createBackgroundParticles();
+            
+            // Initialize service worker
+            await initializeServiceWorker();
+            
+            // Initialize all security systems
+            await initializeSecuritySystems();
+            
+            // Setup event listeners
+            setupEventListeners();
+            
+            // Start real-time updates
+            startRealTimeUpdates();
+            
+            console.log('✅ Platform initialized successfully');
+        });
+
+        // Background particles animation
+        function createBackgroundParticles() {
+            const container = document.getElementById('bgParticles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random position and size
+                const size = Math.random() * 4 + 2;
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * window.innerHeight;
+                const animationDelay = Math.random() * 6;
+                
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+                particle.style.animationDelay = animationDelay + 's';
+                
+                container.appendChild(particle);
+            }
+        }
+
+        // Initialize service worker
+        async function initializeServiceWorker() {
+            try {
+                // Dynamic import for service worker manager
+                const { ServiceWorkerManager } = await import('./js/service-worker-manager.js');
+                serviceWorkerManager = new ServiceWorkerManager();
+                await serviceWorkerManager.initialize();
+                
+                updateStatus('متصل', 'success');
+            } catch (error) {
+                console.warn('Service Worker initialization failed:', error);
+                updateStatus('غير متصل', 'warning');
+            }
+        }
+
+        // Initialize security systems
+        async function initializeSecuritySystems() {
+            try {
+                // Initialize WebAssembly Analyzer
+                const { WasmSecurityAnalyzer } = await import('./js/wasm-security-analyzer.js');
+                wasmAnalyzer = new WasmSecurityAnalyzer();
+                await wasmAnalyzer.initialize();
+                
+                // Initialize Behavioral Analyzer
+                const { AIBehavioralAnalyzer } = await import('./js/ai-behavioral-analyzer.js');
+                behavioralAnalyzer = new AIBehavioralAnalyzer();
+                await behavioralAnalyzer.initialize();
+                
+                // Initialize Vulnerability Detector
+                const { AdvancedVulnerabilityDetector } = await import('./js/advanced-vulnerability-detector.js');
+                vulnDetector = new AdvancedVulnerabilityDetector();
+                await vulnDetector.initialize();
+                
+            } catch (error) {
+                console.error('Security systems initialization failed:', error);
+                showNotification('فشل في تهيئة الأنظمة الأمنية', 'error');
+            }
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.getElementById('header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Navigation smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Vulnerability detection event
+            window.addEventListener('vulnerabilityDetected', function(e) {
+                showNotification('تم اكتشاف تهديد أمني!', 'warning');
+                console.warn('Vulnerability detected:', e.detail);
+            });
+        }
+
+        // Real-time updates
+        function startRealTimeUpdates() {
+            // Update stats every 5 seconds
+            setInterval(updateStats, 5000);
+            
+            // Check connection status
+            setInterval(checkConnection, 10000);
+        }
+
+        function updateStats() {
+            // Simulate real-time stats updates
+            const threatsElement = document.getElementById('threatsDetected');
+            const analysisElement = document.getElementById('analysisCount');
+            
+            if (threatsElement && Math.random() > 0.7) {
+                const current = parseInt(threatsElement.textContent);
+                threatsElement.textContent = current + Math.floor(Math.random() * 3);
+            }
+            
+            if (analysisElement && Math.random() > 0.9) {
+                const current = parseInt(analysisElement.textContent.replace(',', ''));
+                analysisElement.textContent = (current + 1).toLocaleString();
+            }
+        }
+
+        function checkConnection() {
+            if (navigator.onLine) {
+                updateStatus('متصل', 'success');
+            } else {
+                updateStatus('غير متصل', 'warning');
+            }
+        }
+
+        function updateStatus(text, type) {
+            const statusText = document.getElementById('statusText');
+            const statusDot = document.getElementById('statusDot');
+            
+            if (statusText) statusText.textContent = text;
+            
+            if (statusDot) {
+                statusDot.style.background = type === 'success' ? '#4CAF50' : 
+                                           type === 'warning' ? '#FF9800' : '#f44336';
+            }
+        }
+
+        // Modal functions
+        function openSystemModal(systemType) {
+            const modal = document.getElementById('systemModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            
+            modalTitle.textContent = getSystemTitle(systemType);
+            modalBody.innerHTML = getSystemInterface(systemType);
+            modal.classList.add('show');
+            
+            // Initialize system-specific interface
+            initializeSystemInterface(systemType);
+        }
+
+        function closeSystemModal() {
+            const modal = document.getElementById('systemModal');
+            modal.classList.remove('show');
+        }
+
+        function getSystemTitle(systemType) {
+            const titles = {
+                'wasm': 'محلل الأمان عالي الأداء',
+                'behavioral': 'محلل السلوك الذكي',
+                '3d': 'الواجهة التفاعلية ثلاثية الأبعاد',
+                'sw': 'مدير الخدمة المتقدم',
+                'vuln': 'كاشف الثغرات المتطور',
+                'dashboard': 'لوحة التحكم المتكاملة'
+            };
+            return titles[systemType] || 'نظام الأمان';
+        }
+
+        function getSystemInterface(systemType) {
+            switch (systemType) {
+                case 'wasm':
+                    return `
+                        <div class="analysis-interface">
+                            <div class="code-input">
+                                <h3 style="margin-bottom: 1rem; color: var(--primary-color);">أدخل الكود للتحليل</h3>
+                                <textarea class="code-textarea" id="wasmCodeInput" 
+                                    placeholder="// أدخل الكود هنا للتحليل الأمني...
+function processUserInput(input) {
+    var result = eval(input);
+    document.getElementById('output').innerHTML = result;
+}"></textarea>
+                                <button class="system-btn" onclick="analyzeWithWasm()" style="margin-top: 1rem;">
+                                    تحليل الكود
+                                </button>
+                            </div>
+                            <div class="results-panel">
+                                <h3 style="margin-bottom: 1rem; color: var(--primary-color);">نتائج التحليل</h3>
+                                <div id="wasmResults">
+                                    <p style="color: var(--text-secondary); text-align: center; margin-top: 2rem;">
+                                        ستظهر نتائج التحليل هنا...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                case 'behavioral':
+                    return `
+                        <div style="padding: 2rem;">
+                            <div style="text-align: center; margin-bottom: 2rem;">
+                                <div class="loading-spinner"></div>
+                                <p style="color: var(--text-secondary);">جاري تفعيل مراقبة السلوك...</p>
+                            </div>
+                            <div id="behavioralStatus">
+                                <div class="stat-card" style="margin: 1rem 0;">
+                                    <div class="stat-number" id="behavioralScore">0</div>
+                                    <div class="stat-label">نقاط السلوك المشبوه</div>
+                                </div>
+                                <div class="result-item">
+                                    <div class="result-header">
+                                        <span class="result-type">مراقبة الوقت الفعلي</span>
+                                        <span class="result-severity severity-low">نشط</span>
+                                    </div>
+                                    <div class="result-confidence">جاري مراقبة أنماط السلوك والتفاعل</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                case '3d':
+                    return `
+                        <div class="canvas-container" id="3dCanvasContainer">
+                            <div class="canvas-fallback">
+                                <div style="text-align: center;">
+                                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">🎮 الواجهة ثلاثية الأبعاد</h3>
+                                    <p style="color: var(--text-secondary);">جاري تحميل البيئة ثلاثية الأبعاد...</p>
+                                    <div class="loading-spinner" style="margin-top: 1rem;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 1rem; padding: 1rem; background: var(--glass-bg); border-radius: 10px;">
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">التحكم:</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                                • الماوس: تحريك الكاميرا<br>
+                                • العجلة: التكبير والتصغير<br>
+                                • النقر: التفاعل مع العناصر
+                            </p>
+                        </div>
+                    `;
+                    
+                case 'vuln':
+                    return `
+                        <div class="analysis-interface">
+                            <div class="code-input">
+                                <h3 style="margin-bottom: 1rem; color: var(--primary-color);">تحليل الثغرات المتقدم</h3>
+                                <textarea class="code-textarea" id="vulnCodeInput" 
+                                    placeholder="// أدخل الكود لتحليل الثغرات المتقدم...
+<?php
+$user_id = $_GET['id'];
+$query = "SELECT * FROM users WHERE id = " . $user_id;
+$result = mysql_query($query);
+?>"></textarea>
+                                <button class="system-btn" onclick="analyzeVulnerabilities()" style="margin-top: 1rem;">
+                                    تحليل متقدم
+                                </button>
+                            </div>
+                            <div class="results-panel">
+                                <h3 style="margin-bottom: 1rem; color: var(--primary-color);">نتائج التحليل المتقدم</h3>
+                                <div id="vulnResults">
+                                    <p style="color: var(--text-secondary); text-align: center; margin-top: 2rem;">
+                                        نتائج التحليل اللغوي الطبيعي ستظهر هنا...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                case 'dashboard':
+                    return `
+                        <div style="padding: 1rem;">
+                            <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin-bottom: 2rem;">
+                                <div class="stat-card">
+                                    <div class="stat-number" style="color: var(--danger-color);">5</div>
+                                    <div class="stat-label">التهديدات النشطة</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-number" style="color: var(--warning-color);">12</div>
+                                    <div class="stat-label">تحذيرات</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-number" style="color: var(--success-color);">847</div>
+                                    <div class="stat-label">حماية ناجحة</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-number" style="color: var(--primary-color);">99.8%</div>
+                                    <div class="stat-label">معدل الحماية</div>
+                                </div>
+                            </div>
+                            <div style="background: var(--glass-bg); border-radius: 15px; padding: 1.5rem;">
+                                <h4 style="color: var(--primary-color); margin-bottom: 1rem;">آخر الأنشطة الأمنية</h4>
+                                <div id="securityLog">
+                                    <div class="result-item low">
+                                        <div class="result-header">
+                                            <span class="result-type">حماية XSS</span>
+                                            <span class="result-severity severity-low">محجوب</span>
+                                        </div>
+                                        <div class="result-confidence">تم منع محاولة XSS من 192.168.1.100</div>
+                                    </div>
+                                    <div class="result-item medium">
+                                        <div class="result-header">
+                                            <span class="result-type">مراقبة معدل الطلبات</span>
+                                            <span class="result-severity severity-medium">تحذير</span>
+                                        </div>
+                                        <div class="result-confidence">اكتشاف معدل طلبات مرتفع من IP مشبوه</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                default:
+                    return '<p>واجهة النظام قيد التطوير...</p>';
+            }
+        }
+
+        async function initializeSystemInterface(systemType) {
+            switch (systemType) {
+                case '3d':
+                    await initialize3DInterface();
+                    break;
+                case 'behavioral':
+                    startBehavioralMonitoring();
+                    break;
+            }
+        }
+
+        async function initialize3DInterface() {
+            try {
+                const { Security3DInterface } = await import('./js/3d-interactive-interface.js');
+                security3DInterface = new Security3DInterface('3dCanvasContainer');
+                await security3DInterface.initialize();
+            } catch (error) {
+                console.warn('3D interface initialization failed:', error);
+                // Keep fallback interface
+            }
+        }
+
+        function startBehavioralMonitoring() {
+            // Simulate behavioral monitoring
+            let score = 0;
+            const interval = setInterval(() => {
+                score += Math.random() * 10;
+                document.getElementById('behavioralScore').textContent = Math.floor(score);
+                
+                if (score > 80) {
+                    clearInterval(interval);
+                    showNotification('تم اكتشاف سلوك مشبوه!', 'warning');
+                }
+            }, 2000);
+        }
+
+        // System-specific functions
+        async function analyzeWithWasm() {
+            const code = document.getElementById('wasmCodeInput').value;
+            const resultsDiv = document.getElementById('wasmResults');
+            
+            if (!code.trim()) {
+                showNotification('يرجى إدخال كود للتحليل', 'warning');
+                return;
+            }
+            
+            resultsDiv.innerHTML = '<div class="loading-spinner"></div><p style="text-align: center; color: var(--text-secondary);">جاري التحليل...</p>';
+            
+            try {
+                const results = await wasmAnalyzer.analyzeCode(code);
+                displayAnalysisResults(results, resultsDiv);
+            } catch (error) {
+                resultsDiv.innerHTML = `<p style="color: var(--danger-color);">خطأ في التحليل: ${error.message}</p>`;
+            }
+        }
+
+        async function analyzeVulnerabilities() {
+            const code = document.getElementById('vulnCodeInput').value;
+            const resultsDiv = document.getElementById('vulnResults');
+            
+            if (!code.trim()) {
+                showNotification('يرجى إدخال كود للتحليل', 'warning');
+                return;
+            }
+            
+            resultsDiv.innerHTML = '<div class="loading-spinner"></div><p style="text-align: center; color: var(--text-secondary);">جاري التحليل المتقدم...</p>';
+            
+            try {
+                const results = await vulnDetector.analyzeCode(code);
+                displayVulnerabilityResults(results, resultsDiv);
+            } catch (error) {
+                resultsDiv.innerHTML = `<p style="color: var(--danger-color);">خطأ في التحليل: ${error.message}</p>`;
+            }
+        }
+
+        function displayAnalysisResults(results, container) {
+            let html = '';
+            
+            if (results.vulnerabilities.length === 0) {
+                html = '<div class="result-item low"><div class="result-header"><span class="result-type">لا توجد ثغرات</span><span class="result-severity severity-low">آمن</span></div><div class="result-confidence">الكود آمن - لم يتم العثور على ثغرات أمنية</div></div>';
+            } else {
+                results.vulnerabilities.forEach(vuln => {
+                    const severityClass = vuln.severity >= 8 ? 'critical' : vuln.severity >= 6 ? 'high' : vuln.severity >= 4 ? 'medium' : 'low';
+                    html += `
+                        <div class="result-item ${severityClass}">
+                            <div class="result-header">
+                                <span class="result-type">${getVulnTypeName(vuln.type)}</span>
+                                <span class="result-severity severity-${severityClass}">${getSeverityName(vuln.severity)}</span>
+                            </div>
+                            <div class="result-confidence">الثقة: ${(vuln.confidence * 100).toFixed(1)}% | الخط: ${vuln.line}</div>
+                            ${vuln.match ? `<div style="margin-top: 0.5rem; padding: 0.5rem; background: rgba(0,0,0,0.3); border-radius: 5px; font-family: monospace; font-size: 0.8rem;">${vuln.match}</div>` : ''}
+                        </div>
+                    `;
+                });
+            }
+            
+            html += `<div style="margin-top: 1rem; padding: 1rem; background: var(--glass-bg); border-radius: 10px;">
+                <strong>درجة المخاطر الإجمالية:</strong> ${results.riskScore}/100<br>
+                <strong>طريقة التحليل:</strong> ${results.engine}<br>
+                <strong>وقت التحليل:</strong> ${results.performance.analysisTime.toFixed(2)}ms
+            </div>`;
+            
+            container.innerHTML = html;
+        }
+
+        function displayVulnerabilityResults(results, container) {
+            let html = '';
+            
+            if (results.vulnerabilities.length === 0) {
+                html = '<div class="result-item low"><div class="result-header"><span class="result-type">لا توجد ثغرات</span><span class="result-severity severity-low">آمن</span></div><div class="result-confidence">التحليل المتقدم لم يجد ثغرات أمنية</div></div>';
+            } else {
+                results.vulnerabilities.forEach(vuln => {
+                    const severityClass = vuln.severity >= 8 ? 'critical' : vuln.severity >= 6 ? 'high' : vuln.severity >= 4 ? 'medium' : 'low';
+                    html += `
+                        <div class="result-item ${severityClass}">
+                            <div class="result-header">
+                                <span class="result-type">${getVulnTypeName(vuln.type)}</span>
+                                <span class="result-severity severity-${severityClass}">${getSeverityName(vuln.severity)}</span>
+                            </div>
+                            <div class="result-confidence">الثقة: ${(vuln.confidence * 100).toFixed(1)}% | الطريقة: ${vuln.method}</div>
+                            ${vuln.context ? `<div style="margin-top: 0.5rem; padding: 0.5rem; background: rgba(0,0,0,0.3); border-radius: 5px; font-size: 0.8rem;">السياق: ${vuln.context}</div>` : ''}
+                        </div>
+                    `;
+                });
+            }
+            
+            if (results.recommendations && results.recommendations.length > 0) {
+                html += '<h4 style="color: var(--primary-color); margin-top: 1.5rem; margin-bottom: 0.5rem;">التوصيات:</h4>';
+                results.recommendations.forEach(rec => {
+                    html += `
+                        <div class="result-item" style="border-left-color: var(--success-color);">
+                            <div class="result-header">
+                                <span class="result-type">${rec.type}</span>
+                                <span class="result-severity severity-${rec.priority.toLowerCase()}">${rec.priority}</span>
+                            </div>
+                            <div style="margin-top: 0.5rem;">${rec.action}</div>
+                            ${rec.code ? `<pre style="margin-top: 0.5rem; padding: 0.5rem; background: rgba(0,0,0,0.5); border-radius: 5px; font-size: 0.8rem; overflow-x: auto;"><code>${rec.code}</code></pre>` : ''}
+                        </div>
+                    `;
+                });
+            }
+            
+            html += `<div style="margin-top: 1rem; padding: 1rem; background: var(--glass-bg); border-radius: 10px;">
+                <strong>درجة المخاطر:</strong> ${results.riskScore}/100<br>
+                <strong>مستوى الثقة:</strong> ${(results.confidence * 100).toFixed(1)}%<br>
+                <strong>طرق التحليل المستخدمة:</strong> ${results.methods.join(', ')}<br>
+                <strong>وقت التحليل:</strong> ${results.analysisTime.toFixed(2)}ms
+            </div>`;
+            
+            container.innerHTML = html;
+        }
+
+        function getVulnTypeName(type) {
+            const names = {
+                'xss': 'Cross-Site Scripting (XSS)',
+                'sql_injection': 'SQL Injection',
+                'command_injection': 'Command Injection',
+                'path_traversal': 'Path Traversal',
+                'csrf': 'Cross-Site Request Forgery',
+                'deserialization': 'Deserialization',
+                'code_injection': 'Code Injection',
+                'file_inclusion': 'File Inclusion'
+            };
+            return names[type] || type;
+        }
+
+        function getSeverityName(severity) {
+            if (severity >= 8) return 'حرج';
+            if (severity >= 6) return 'عالي';
+            if (severity >= 4) return 'متوسط';
+            return 'منخفض';
+        }
+
+        // Notification system
+        function showNotification(message, type = 'info') {
+            const container = document.getElementById('notificationContainer');
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <div class="notification-header">${type === 'success' ? 'نجح' : type === 'warning' ? 'تحذير' : type === 'error' ? 'خطأ' : 'معلومة'}</div>
+                <div class="notification-message">${message}</div>
+            `;
+            
+            container.appendChild(notification);
+            
+            // Show notification
+            setTimeout(() => notification.classList.add('show'), 100);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 300);
+            }, 5000);
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('systemModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeSystemModal();
+            }
+        });
+
+        // Handle escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeSystemModal();
+            }
+        });
+    </script>
+</body>
+</html>

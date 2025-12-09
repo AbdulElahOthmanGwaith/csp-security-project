@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة الأمان المتقدمة - Advanced Security Platform</title>
+    <meta name="description" content="منصة شاملة لأمان الويب مع تقنيات متقدمة في 2025">
+    
+    <!-- الخطوط العربية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- الأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS الأساسي -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    
+    <!-- ميتا تاجز للأمان -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    
+    <style>
+        /* تحسينات خاصة بالمنصة المتقدمة */
+        .advanced-platform {
+            background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 50%, #0A0A0A 100%);
+            min-height: 100vh;
+        }
+
+        .ai-features-section {
+            background: rgba(0, 224, 213, 0.05);
+            border: 1px solid rgba(0, 224, 213, 0.2);
+            border-radius: 15px;
+            margin: 2rem 0;
+            padding: 2rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, #1E1E1E, #2A2A2A);
+            border: 1px solid rgba(0, 224, 213, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 224, 213, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 224, 213, 0.2);
+            border-color: rgba(0, 224, 213, 0.5);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #00E0D5, #00B8B8);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: #0A0A0A;
+            font-size: 1.5rem;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #E0E0E0;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-description {
+            color: #B0B0B0;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .feature-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.25rem 0.75rem;
+            background: rgba(0, 224, 213, 0.1);
+            border: 1px solid rgba(0, 224, 213, 0.3);
+            border-radius: 20px;
+            font-size: 0.875rem;
+            color: #00E0D5;
+        }
+
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            background: #00C851;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .dashboard-preview {
+            background: #0D1117;
+            border: 1px solid #30363D;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        .dashboard-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #30363D;
+        }
+
+        .dashboard-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #F0F6FC;
+        }
+
+        .dashboard-controls {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .control-btn {
+            padding: 0.5rem 1rem;
+            background: #21262D;
+            border: 1px solid #30363D;
+            border-radius: 6px;
+            color: #F0F6FC;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+        }
+
+        .control-btn:hover {
+            background: #30363D;
+            border-color: #00E0D5;
+        }
+
+        .control-btn.active {
+            background: #00E0D5;
+            border-color: #00E0D5;
+            color: #0A0A0A;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .metric-card {
+            background: #161B22;
+            border: 1px solid #30363D;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #00E0D5;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            color: #8B949E;
+            font-size: 0.875rem;
+        }
+
+        .live-chart {
+            width: 100%;
+            height: 200px;
+            background: #0D1117;
+            border: 1px solid #30363D;
+            border-radius: 8px;
+            margin-top: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chart-line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 224, 213, 0.3), transparent);
+        }
+
+        .chart-points {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .chart-point {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #00E0D5;
+            border-radius: 50%;
+            animation: chartPoint 2s infinite;
+        }
+
+        @keyframes chartPoint {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.7; }
+        }
+
+        .training-module {
+            background: linear-gradient(145deg, #1A1A1A, #2A2A2A);
+            border: 1px solid rgba(0, 224, 213, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .module-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .module-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #E0E0E0;
+        }
+
+        .module-progress {
+            background: #333;
+            border-radius: 10px;
+            height: 6px;
+            width: 100px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #00E0D5, #00B8B8);
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+
+        .interactive-demo {
+            background: #0D1117;
+            border: 1px solid #30363D;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .demo-controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .demo-input {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .demo-output {
+            background: #161B22;
+            border: 1px solid #30363D;
+            border-radius: 6px;
+            padding: 1rem;
+            margin-top: 1rem;
+            min-height: 60px;
+            font-family: 'JetBrains Mono', monospace;
+            color: #F0F6FC;
+            direction: ltr;
+        }
+
+        .code-example {
+            background: #0D1117;
+            border: 1px solid #30363D;
+            border-radius: 6px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .code-header {
+            background: #21262D;
+            padding: 0.5rem 1rem;
+            border-bottom: 1px solid #30363D;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.875rem;
+            color: #8B949E;
+        }
+
+        .copy-btn {
+            background: none;
+            border: 1px solid #30363D;
+            border-radius: 4px;
+            padding: 0.25rem 0.5rem;
+            color: #8B949E;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            background: #30363D;
+            color: #F0F6FC;
+        }
+
+        .code-content {
+            padding: 1rem;
+            overflow-x: auto;
+        }
+
+        .code-content code {
+            font-family: 'JetBrains Mono', monospace;
+            color: #F0F6FC;
+            direction: ltr;
+            display: block;
+        }
+
+        .alert-box {
+            background: rgba(255, 68, 68, 0.1);
+            border: 1px solid rgba(255, 68, 68, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            color: #FF6B6B;
+        }
+
+        .info-box {
+            background: rgba(0, 224, 213, 0.1);
+            border: 1px solid rgba(0, 224, 213, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            color: #00E0D5;
+        }
+
+        .success-box {
+            background: rgba(0, 200, 81, 0.1);
+            border: 1px solid rgba(0, 200, 81, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            color: #00C851;
+        }
+
+        .warning-box {
+            background: rgba(255, 187, 51, 0.1);
+            border: 1px solid rgba(255, 187, 51, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            color: #FFBB33;
+        }
+
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .demo-controls {
+                flex-direction: column;
+            }
+            
+            .dashboard-controls {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* تأثيرات متقدمة */
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(0, 224, 213, 0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(0, 224, 213, 0.3); }
+            to { box-shadow: 0 0 30px rgba(0, 224, 213, 0.6); }
+        }
+
+        .slide-in {
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="advanced-platform">
+    <!-- شريط التنقل المتقدم -->
+    <nav class="navbar advanced-navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-shield-alt"></i>
+                <span>منصة الأمان المتقدمة</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#ai-features" class="nav-link">
+                    <i class="fas fa-robot"></i>
+                    <span>الميزات الذكية</span>
+                </a>
+                <a href="#dashboard" class="nav-link">
+                    <i class="fas fa-chart-line"></i>
+                    <span>لوحة المعلومات</span>
+                </a>
+                <a href="#training" class="nav-link">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>التدريب</span>
+                </a>
+                <a href="#tools" class="nav-link">
+                    <i class="fas fa-tools"></i>
+                    <span>الأدوات</span>
+                </a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-primary" onclick="initializeAdvancedFeatures()">
+                    <i class="fas fa-play"></i>
+                    تشغيل الميزات المتقدمة
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- القسم الرئيسي -->
+    <main class="main-content">
+        <!-- القسم البطل -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    منصة الأمان المتقدمة
+                    <span class="text-gradient">2025</span>
+                </h1>
+                <p class="hero-description">
+                    نظام شامل ومتطور لأمان الويب مع تقنيات الذكاء الاصطناعي والتعلم الآلي
+                    للمراقبة في الوقت الفعلي والتحليل الذكي للتهديدات
+                </p>
+                <div class="hero-features">
+                    <div class="feature-badge">
+                        <i class="fas fa-brain"></i>
+                        <span>ذكاء اصطناعي متقدم</span>
+                    </div>
+                    <div class="feature-badge">
+                        <i class="fas fa-chart-line"></i>
+                        <span>مراقبة في الوقت الفعلي</span>
+                    </div>
+                    <div class="feature-badge">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>تدريب تفاعلي</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الميزات الذكية -->
+        <section id="ai-features" class="ai-features-section">
+            <div class="container">
+                <h2 class="section-title">الميزات الذكية المتقدمة</h2>
+                <p class="section-description">
+                    استفد من أحدث تقنيات الذكاء الاصطناعي في أمان الويب
+                </p>
+                
+                <div class="feature-grid">
+                    <!-- محلل التهديدات الذكي -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="feature-title">محلل التهديدات الذكي</h3>
+                        <p class="feature-description">
+                            تحليل ذكي للتهديدات باستخدام الذكاء الاصطناعي مع تحديد المخاطر والتوصيات التلقائية
+                        </p>
+                        <div class="feature-status">
+                            <div class="status-indicator"></div>
+                            <span>نشط</span>
+                        </div>
+                        <div class="feature-demo">
+                            <button class="btn btn-outline" onclick="demoThreatAnalyzer()">
+                                <i class="fas fa-play"></i>
+                                تجربة
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- المراقبة في الوقت الفعلي -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-icon">
+                            <i class="fas fa-broadcast-tower"></i>
+                        </div>
+                        <h3 class="feature-title">المراقبة في الوقت الفعلي</h3>
+                        <p class="feature-description">
+                            مراقبة أمنية متطورة مع تنبيهات فورية وتحليل أداء متقدم
+                        </p>
+                        <div class="feature-status">
+                            <div class="status-indicator"></div>
+                            <span>نشط</span>
+                        </div>
+                        <div class="feature-demo">
+                            <button class="btn btn-outline" onclick="demoRealTimeMonitoring()">
+                                <i class="fas fa-play"></i>
+                                تجربة
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- مولد السياسات الذكي -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="feature-title">مولد السياسات الذكي</h3>
+                        <p class="feature-description">
+                            توليد سياسات أمان مخصصة تلقائياً بناءً على تحليل الموقع
+                        </p>
+                        <div class="feature-status">
+                            <div class="status-indicator"></div>
+                            <span>نشط</span>
+                        </div>
+                        <div class="feature-demo">
+                            <button class="btn btn-outline" onclick="demoSmartPolicyGenerator()">
+                                <i class="fas fa-play"></i>
+                                تجربة
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- التدريب التفاعلي -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="feature-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3 class="feature-title">التدريب التفاعلي</h3>
+                        <p class="feature-description">
+                            دروس تفاعلية ومحاكاة أمنية مع سيناريوهات واقعية
+                        </p>
+                        <div class="feature-status">
+                            <div class="status-indicator"></div>
+                            <span>نشط</span>
+                        </div>
+                        <div class="feature-demo">
+                            <button class="btn btn-outline" onclick="demoInteractiveTraining()">
+                                <i class="fas fa-play"></i>
+                                تجربة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم لوحة المعلومات -->
+        <section id="dashboard" class="dashboard-section">
+            <div class="container">
+                <h2 class="section-title">لوحة المعلومات الذكية</h2>
+                <p class="section-description">
+                    مراقبة شاملة للمؤشرات الأمنية والأداء في الوقت الفعلي
+                </p>
+                
+                <div class="dashboard-preview">
+                    <div class="dashboard-header">
+                        <h3 class="dashboard-title">
+                            <i class="fas fa-chart-area"></i>
+                            نظرة عامة على الأمان
+                        </h3>
+                        <div class="dashboard-controls">
+                            <button class="control-btn active" onclick="switchDashboardView('overview')">نظرة عامة</button>
+                            <button class="control-btn" onclick="switchDashboardView('threats')">التهديدات</button>
+                            <button class="control-btn" onclick="switchDashboardView('compliance')">الامتثال</button>
+                            <button class="control-btn" onclick="switchDashboardView('performance')">الأداء</button>
+                        </div>
+                    </div>
+                    
+                    <div class="metrics-grid" id="dashboard-metrics">
+                        <div class="metric-card">
+                            <div class="metric-value">95</div>
+                            <div class="metric-label">درجة الأمان</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">12</div>
+                            <div class="metric-label">التهديدات اليومية</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">99.9%</div>
+                            <div class="metric-label">وقت التشغيل</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">3</div>
+                            <div class="metric-label">انتهاكات حرجة</div>
+                        </div>
+                    </div>
+                    
+                    <div class="live-chart">
+                        <div class="chart-line"></div>
+                        <div class="chart-points">
+                            <div class="chart-point" style="left: 10%; bottom: 20%;"></div>
+                            <div class="chart-point" style="left: 20%; bottom: 40%;"></div>
+                            <div class="chart-point" style="left: 30%; bottom: 30%;"></div>
+                            <div class="chart-point" style="left: 40%; bottom: 60%;"></div>
+                            <div class="chart-point" style="left: 50%; bottom: 50%;"></div>
+                            <div class="chart-point" style="left: 60%; bottom: 70%;"></div>
+                            <div class="chart-point" style="left: 70%; bottom: 45%;"></div>
+                            <div class="chart-point" style="left: 80%; bottom: 65%;"></div>
+                            <div class="chart-point" style="left: 90%; bottom: 55%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم التدريب -->
+        <section id="training" class="training-section">
+            <div class="container">
+                <h2 class="section-title">منصة التدريب التفاعلي</h2>
+                <p class="section-description">
+                    تعلم أمان الويب من خلال تجارب تفاعلية ومحاكاة واقعية
+                </p>
+                
+                <div class="training-modules">
+                    <!-- وحدة أساسيات الأمان -->
+                    <div class="training-module">
+                        <div class="module-header">
+                            <h3 class="module-title">
+                                <i class="fas fa-shield-alt"></i>
+                                أساسيات أمان الويب
+                            </h3>
+                            <div class="module-progress">
+                                <div class="progress-bar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <p class="module-description">
+                            تعلم المفاهيم الأساسية لأمان الويب وأهم التهديدات وكيفية الحماية منها
+                        </p>
+                        <div class="module-stats">
+                            <span><i class="fas fa-clock"></i> 30 دقيقة</span>
+                            <span><i class="fas fa-signal"></i> مبتدئ</span>
+                            <span><i class="fas fa-check-circle"></i> 3 دروس مكتملة</span>
+                        </div>
+                        <div class="module-actions">
+                            <button class="btn btn-primary" onclick="startTrainingModule('fundamentals')">
+                                <i class="fas fa-play"></i>
+                                متابعة التعلم
+                            </button>
+                            <button class="btn btn-outline" onclick="previewTrainingModule('fundamentals')">
+                                <i class="fas fa-eye"></i>
+                                معاينة
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- وحدة XSS -->
+                    <div class="training-module">
+                        <div class="module-header">
+                            <h3 class="module-title">
+                                <i class="fas fa-bug"></i>
+                                منع هجمات XSS
+                            </h3>
+                            <div class="module-progress">
+                                <div class="progress-bar" style="width: 25%"></div>
+                            </div>
+                        </div>
+                        <p class="module-description">
+                            فهم هجمات Cross-Site Scripting وكيفية الحماية منها باستخدام CSP وأفضل الممارسات
+                        </p>
+                        <div class="module-stats">
+                            <span><i class="fas fa-clock"></i> 45 دقيقة</span>
+                            <span><i class="fas fa-signal"></i> متوسط</span>
+                            <span><i class="fas fa-trophy"></i> شهادة متاحة</span>
+                        </div>
+                        <div class="module-actions">
+                            <button class="btn btn-primary" onclick="startTrainingModule('xss')">
+                                <i class="fas fa-play"></i>
+                                بدء التعلم
+                            </button>
+                            <button class="btn btn-outline" onclick="previewTrainingModule('xss')">
+                                <i class="fas fa-eye"></i>
+                                معاينة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الأدوات المتقدمة -->
+        <section id="tools" class="tools-section">
+            <div class="container">
+                <h2 class="section-title">الأدوات المتقدمة</h2>
+                <p class="section-description">
+                    مجموعة شاملة من الأدوات المتطورة لحماية وتطوير التطبيقات
+                </p>
+                
+                <div class="tools-grid">
+                    <!-- أداة محاكاة XSS -->
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3 class="tool-title">محاكي XSS الآمن</h3>
+                        </div>
+                        <div class="tool-description">
+                            تجربة تفاعلية آمنة لفهم هجمات XSS وكيفية الحماية منها
+                        </div>
+                        <div class="interactive-demo">
+                            <div class="demo-controls">
+                                <input type="text" class="demo-input" placeholder="أدخل تعليقك الآمن..." id="xss-demo-input">
+                                <button class="btn btn-secondary" onclick="simulateXSSAttack()">
+                                    <i class="fas fa-play"></i>
+                                    تجربة آمنة
+                                </button>
+                            </div>
+                            <div class="demo-output" id="xss-demo-output">
+                                <em>النتيجة ستظهر هنا...</em>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- مولد CSP -->
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-shield-virus"></i>
+                            </div>
+                            <h3 class="tool-title">مولد CSP الذكي</h3>
+                        </div>
+                        <div class="tool-description">
+                            إنشاء سياسات أمان محتوى مخصصة بناءً على احتياجات موقعك
+                        </div>
+                        <div class="interactive-demo">
+                            <div class="demo-controls">
+                                <select class="demo-input" id="csp-template">
+                                    <option value="basic">أساسي</option>
+                                    <option value="strict">صارم</option>
+                                    <option value="modern">حديث</option>
+                                    <option value="ecommerce">تجارة إلكترونية</option>
+                                </select>
+                                <button class="btn btn-secondary" onclick="generateCSP()">
+                                    <i class="fas fa-magic"></i>
+                                    توليد السياسة
+                                </button>
+                            </div>
+                            <div class="demo-output" id="csp-demo-output">
+                                <code>سياسة CSP ستظهر هنا...</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- فاحص الأمان -->
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">
+                                <i class="fas fa-stethoscope"></i>
+                            </div>
+                            <h3 class="tool-title">فاحص الأمان الذكي</h3>
+                        </div>
+                        <div class="tool-description">
+                            تحليل شامل للموقع واكتشاف الثغرات الأمنية المحتملة
+                        </div>
+                        <div class="interactive-demo">
+                            <div class="demo-controls">
+                                <input type="url" class="demo-input" placeholder="https://example.com" id="scan-demo-input">
+                                <button class="btn btn-secondary" onclick="scanWebsite()">
+                                    <i class="fas fa-search"></i>
+                                    فحص الموقع
+                                </button>
+                            </div>
+                            <div class="demo-output" id="scan-demo-output">
+                                <em>نتائج الفحص ستظهر هنا...</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الإحصائيات -->
+        <section class="stats-section">
+            <div class="container">
+                <h2 class="section-title">إحصائيات المنصة</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="stat-value">50,000+</div>
+                        <div class="stat-label">موقع محمي</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <div class="stat-value">1M+</div>
+                        <div class="stat-label">تهديد تم اكتشافه</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-value">25,000+</div>
+                        <div class="stat-label">مطور مدرب</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-value">99.9%</div>
+                        <div class="stat-label">وقت التشغيل</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- تذييل متقدم -->
+    <footer class="advanced-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>منصة الأمان المتقدمة</h4>
+                    <p>أحدث التقنيات في أمان الويب لحماية تطبيقاتك وموقعك</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>الأدوات</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">محلل التهديدات</a></li>
+                        <li><a href="#">مولد السياسات</a></li>
+                        <li><a href="#">فاحص الأمان</a></li>
+                        <li><a href="#">لوحة المعلومات</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>التدريب</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">دروس تفاعلية</a></li>
+                        <li><a href="#">محاكاة أمنية</a></li>
+                        <li><a href="#">شهادات</a></li>
+                        <li><a href="#">ورش عمل</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>المساعدة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">الوثائق</a></li>
+                        <li><a href="#">الدعم الفني</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 منصة الأمان المتقدمة. جميع الحقوق محفوظة.</p>
+                <p>طُور بواسطة MiniMax Agent</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- سكريبت JavaScript الأساسي -->
+    <script src="js/main.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/tools.js"></script>
+    
+    <!-- سكريبت الميزات المتقدمة -->
+    <script src="js/ai-threat-analyzer.js"></script>
+    <script src="js/real-time-monitor.js"></script>
+    <script src="js/smart-policy-generator.js"></script>
+    <script src="js/security-training.js"></script>
+    <script src="js/security-dashboard.js"></script>
+    
+    <!-- سكريبت التفاعل المتقدم -->
+    <script>
+        // تهيئة المنصة المتقدمة
+        let securityTraining, securityDashboard, aiAnalyzer, policyGenerator, realTimeMonitor;
+
+        function initializeAdvancedFeatures() {
+            showNotification('جاري تهيئة الميزات المتقدمة...', 'info');
+            
+            // تهيئة المكونات
+            securityTraining = new SecurityTraining();
+            securityDashboard = new SecurityDashboard();
+            aiAnalyzer = new AIThreatAnalyzer();
+            policyGenerator = new SmartPolicyGenerator();
+            realTimeMonitor = securityMonitor;
+            
+            // طلب إذن الإشعارات
+            if ('Notification' in window) {
+                Notification.requestPermission();
+            }
+            
+            // تفعيل المراقبة في الوقت الفعلي
+            if (realTimeMonitor) {
+                realTimeMonitor.startMonitoring();
+            }
+            
+            showNotification('تم تفعيل جميع الميزات المتقدمة بنجاح!', 'success');
+            
+            // تأثيرات بصرية
+            document.querySelectorAll('.feature-card').forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('slide-in');
+                }, index * 200);
+            });
+        }
+
+        // وظائف التجارب التفاعلية
+        function demoThreatAnalyzer() {
+            const sampleContent = '<script>alert("XSS Attack!")</script>';
+            const result = aiAnalyzer.analyzeContent(sampleContent, 'demo');
+            
+            result.then(analysis => {
+                showDemoResult('threat-analyzer', `
+                    <div class="alert-box">
+                        <h4>نتائج التحليل</h4>
+                        <p><strong>درجة المخاطر:</strong> ${analysis.riskScore}%</p>
+                        <p><strong>التهديدات المكتشفة:</strong> ${analysis.threats.length}</p>
+                        <ul>
+                            ${analysis.threats.map(threat => 
+                                `<li>${threat.type} - ${threat.severity}</li>`
+                            ).join('')}
+                        </ul>
+                    </div>
+                `);
+            }).catch(error => {
+                showDemoResult('threat-analyzer', `
+                    <div class="warning-box">
+                        <p>خطأ في التحليل: ${error.message}</p>
+                    </div>
+                `);
+            });
+        }
+
+        function demoRealTimeMonitoring() {
+            showDemoResult('real-time-monitor', `
+                <div class="info-box">
+                    <h4>المراقبة في الوقت الفعلي نشطة</h4>
+                    <p>جاري مراقبة الطلبات والأخطاء والتنبيهات الأمنية...</p>
+                    <div class="metrics-grid" style="margin-top: 1rem;">
+                        <div class="metric-card">
+                            <div class="metric-value">1,234</div>
+                            <div class="metric-label">طلبات اليوم</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">5</div>
+                            <div class="metric-label">تنبيهات نشطة</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">250ms</div>
+                            <div class="metric-label">متوسط الاستجابة</div>
+                        </div>
+                    </div>
+                </div>
+            `);
+            
+            // محاكاة تنبيه
+            setTimeout(() => {
+                showNotification('تنبيه أمني: محاولة XSS مكتشفة', 'warning');
+            }, 2000);
+        }
+
+        function demoSmartPolicyGenerator() {
+            const sampleUrl = 'https://example.com';
+            const result = policyGenerator.generatePolicy(sampleUrl);
+            
+            result.then(policy => {
+                showDemoResult('policy-generator', `
+                    <div class="success-box">
+                        <h4>سياسة الأمان المولدة</h4>
+                        <p><strong>نوع الموقع:</strong> ${policy.websiteType}</p>
+                        <p><strong>سياسة CSP:</strong></p>
+                        <div class="code-example">
+                            <code>${policy.policy.csp}</code>
+                        </div>
+                        <p><strong>عدد التوصيات:</strong> ${policy.recommendations.length}</p>
+                    </div>
+                `);
+            }).catch(error => {
+                showDemoResult('policy-generator', `
+                    <div class="warning-box">
+                        <p>خطأ في توليد السياسة: ${error.message}</p>
+                    </div>
+                `);
+            });
+        }
+
+        function demoInteractiveTraining() {
+            showDemoResult('interactive-training', `
+                <div class="info-box">
+                    <h4>منصة التدريب التفاعلي</h4>
+                    <p>اختر الوحدة التي تريد تعلمها:</p>
+                    <div style="margin-top: 1rem;">
+                        <button class="btn btn-primary" onclick="startTrainingModule('fundamentals')">
+                            أساسيات أمان الويب
+                        </button>
+                        <button class="btn btn-primary" onclick="startTrainingModule('xss')">
+                            منع هجمات XSS
+                        </button>
+                        <button class="btn btn-primary" onclick="startTrainingModule('csrf')">
+                            حماية من CSRF
+                        </button>
+                    </div>
+                </div>
+            `);
+        }
+
+        // وظائف لوحة المعلومات
+        function switchDashboardView(view) {
+            document.querySelectorAll('.control-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // تحديث البيانات حسب العرض المختار
+            showNotification(`تم التبديل إلى عرض ${view}`, 'info');
+        }
+
+        // وظائف التدريب
+        function startTrainingModule(moduleId) {
+            if (!securityTraining) {
+                securityTraining = new SecurityTraining();
+            }
+            
+            const moduleData = securityTraining.startModule(moduleId);
+            if (moduleData) {
+                showNotification(`بدء وحدة ${moduleData.module.title}`, 'success');
+                // يمكن فتح نافذة جديدة أو تحديث المحتوى الحالي
+            }
+        }
+
+        function previewTrainingModule(moduleId) {
+            showNotification(`معاينة وحدة ${moduleId}`, 'info');
+            // عرض معاينة الوحدة
+        }
+
+        // وظائف الأدوات
+        function simulateXSSAttack() {
+            const input = document.getElementById('xss-demo-input').value;
+            const output = document.getElementById('xss-demo-output');
+            
+            if (!input) {
+                output.innerHTML = '<em>يرجى إدخال نص أولاً</em>';
+                return;
+            }
+            
+            // محاكاة آمنة - لا يتم تنفيذ الكود
+            const safeOutput = input
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#x27;');
+            
+            output.innerHTML = `
+                <div class="info-box">
+                    <h4>النتيجة الآمنة</h4>
+                    <p>تم عرض النص بأمان بدون تنفيذ الكود:</p>
+                    <code>${safeOutput}</code>
+                    <p style="margin-top: 1rem; color: #00C851;">
+                        <i class="fas fa-check-circle"></i> تم الحماية من XSS بنجاح!
+                    </p>
+                </div>
+            `;
+        }
+
+        function generateCSP() {
+            const template = document.getElementById('csp-template').value;
+            const output = document.getElementById('csp-demo-output');
+            
+            const policies = {
+                basic: "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;",
+                strict: "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; frame-ancestors 'none';",
+                modern: "default-src 'self'; script-src 'self' 'strict-dynamic'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; require-trusted-types-for 'script';",
+                ecommerce: "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:;"
+            };
+            
+            output.innerHTML = policies[template] || policies.basic;
+        }
+
+        function scanWebsite() {
+            const url = document.getElementById('scan-demo-input').value;
+            const output = document.getElementById('scan-demo-output');
+            
+            if (!url) {
+                output.innerHTML = '<em>يرجى إدخال رابط الموقع أولاً</em>';
+                return;
+            }
+            
+            output.innerHTML = '<em>جاري فحص الموقع...</em>';
+            
+            // محاكاة فحص الموقع
+            setTimeout(() => {
+                const mockResults = {
+                    csp: 'موجود',
+                    https: 'مفعل',
+                    xss: 'محمي',
+                    csrf: 'يحتاج تحسين',
+                    headers: 'جزئياً آمن'
+                };
+                
+                output.innerHTML = `
+                    <div class="success-box">
+                        <h4>نتائج الفحص</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            ${Object.entries(mockResults).map(([check, status]) => `
+                                <li style="margin: 0.5rem 0; padding: 0.5rem; background: rgba(0,0,0,0.2); border-radius: 4px;">
+                                    <strong>${check.toUpperCase()}:</strong> 
+                                    <span style="color: ${status.includes('يحتاج') ? '#FFBB33' : '#00C851'}">
+                                        ${status}
+                                    </span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                `;
+            }, 2000);
+        }
+
+        // وظائف مساعدة
+        function showDemoResult(containerId, content) {
+            // يمكن تحسين هذا لعرض نتائج أكثر تفاعلاً
+            console.log('Demo result for', containerId, ':', content);
+        }
+
+        function showNotification(message, type = 'info') {
+            // إنشاء إشعار
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = `
+                <i class="fas fa-${getNotificationIcon(type)}"></i>
+                <span>${message}</span>
+                <button class="notification-close" onclick="this.parentElement.remove()">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+            
+            // إضافة الأنماط
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${getNotificationColor(type)};
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                z-index: 10000;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                animation: slideIn 0.3s ease-out;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // إزالة تلقائية بعد 5 ثوان
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.style.animation = 'slideOut 0.3s ease-out';
+                    setTimeout(() => notification.remove(), 300);
+                }
+            }, 5000);
+        }
+
+        function getNotificationIcon(type) {
+            const icons = {
+                info: 'info-circle',
+                success: 'check-circle',
+                warning: 'exclamation-triangle',
+                error: 'times-circle'
+            };
+            return icons[type] || 'info-circle';
+        }
+
+        function getNotificationColor(type) {
+            const colors = {
+                info: '#00E0D5',
+                success: '#00C851',
+                warning: '#FFBB33',
+                error: '#FF4444'
+            };
+            return colors[type] || '#00E0D5';
+        }
+
+        // إضافة الأنيميشن
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // تشغيل تلقائي عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            showNotification('مرحباً بك في منصة الأمان المتقدمة 2025!', 'success');
+        });
+    </script>
+</body>
+</html>

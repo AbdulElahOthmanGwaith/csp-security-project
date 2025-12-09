@@ -1,0 +1,452 @@
+[
+  {
+    "query": "صورة توضيحية لجدار الحماية WAF لحماية التطبيقات",
+    "image_info": {
+      "url": "https://www.radware.com/RadwareSite/MediaLibraries/Images/Cyberpedia/what-is-waf.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 75946,
+      "width": 1100,
+      "height": 575,
+      "total_pixels": 632500,
+      "basic_score": 0.8806756916264162,
+      "file_name": "waf_protection_7.jpg"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لجدار الحماية WAF لحماية التطبيقات",
+    "image_info": {
+      "url": "https://www.cloudflare.com/img/learning/ddos/glossary/waf/waf.png",
+      "img_format": "PNG",
+      "mode": "RGB",
+      "file_size": 43429,
+      "width": 1459,
+      "height": 660,
+      "total_pixels": 962940,
+      "basic_score": 0.8791460663025104,
+      "file_name": "waf_protection_0.png"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لجدار الحماية WAF لحماية التطبيقات",
+    "image_info": {
+      "url": "https://www.cisco.com/content/dam/cisco-cdc/site/images/heroes/products/security/web-application-firewall-724x543.png",
+      "img_format": "PNG",
+      "mode": "RGB",
+      "file_size": 30138,
+      "width": 724,
+      "height": 543,
+      "total_pixels": 393132,
+      "basic_score": 0.8071207524844679,
+      "file_name": "waf_protection_5.png"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لمتصفح الويب وأمان الشبكة",
+    "image_info": {
+      "url": "https://zigrin.com/wp-content/uploads/2022/08/http-security-headers-1-1024x933.png",
+      "img_format": "PNG",
+      "mode": "RGBA",
+      "file_size": 225549,
+      "width": 1024,
+      "height": 933,
+      "total_pixels": 955392,
+      "basic_score": 0.9279848464595593,
+      "file_name": "browser_security_6.png"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لمتصفح الويب وأمان الشبكة",
+    "image_info": {
+      "url": "https://blogadmin.detectify.com/app/uploads/2019/02/chrome_2019-02-01_11-11-13-1.png",
+      "img_format": "PNG",
+      "mode": "RGBA",
+      "file_size": 107044,
+      "width": 1071,
+      "height": 675,
+      "total_pixels": 722925,
+      "basic_score": 0.8959063212373346,
+      "file_name": "browser_security_8.png"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لمتصفح الويب وأمان الشبكة",
+    "image_info": {
+      "url": "https://blogadmin.detectify.com/app/uploads/2019/02/without-XCTO-1.png",
+      "img_format": "PNG",
+      "mode": "RGBA",
+      "file_size": 75280,
+      "width": 1071,
+      "height": 675,
+      "total_pixels": 722925,
+      "basic_score": 0.8925626304714731,
+      "file_name": "browser_security_0.png"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لكود تنفيذ سياسة أمان المحتوى",
+    "image_info": {
+      "url": "https://www.alliancetek.com/blog/image.axd?picture=2023%2F4%2F319.+Content+Security+Policy+(CSP)+%26+its+Importance.png",
+      "img_format": "PNG",
+      "mode": "RGBA",
+      "file_size": 783040,
+      "width": 1200,
+      "height": 630,
+      "total_pixels": 756000,
+      "basic_score": 0.9371562827052231,
+      "file_name": "csp_code_8.axd"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لكود تنفيذ سياسة أمان المحتوى",
+    "image_info": {
+      "url": "https://media.licdn.com/dms/image/v2/D4E12AQGLjtJ6wso4Mw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1722195376458?e=2147483647&v=beta&t=FMd0-zZ1QfnResxrLh3MrGCFZrqZPJSgKk_U6yggw-A",
+      "img_format": "PNG",
+      "mode": "RGB",
+      "file_size": 350709,
+      "width": 1163,
+      "height": 720,
+      "total_pixels": 837360,
+      "basic_score": 0.9318756482583167,
+      "file_name": "csp_code_7.jpg"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لكود تنفيذ سياسة أمان المحتوى",
+    "image_info": {
+      "url": "https://miro.medium.com/v2/resize:fit:1400/1*8qFV9qv7QHdPdjlrY5zuVw.png",
+      "img_format": "PNG",
+      "mode": "RGB",
+      "file_size": 129469,
+      "width": 1400,
+      "height": 708,
+      "total_pixels": 991200,
+      "basic_score": 0.9139329365579216,
+      "file_name": "csp_code_3.png"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية للتهديدات السيبرانية والحماية التقنية",
+    "image_info": {
+      "url": "https://marvel-b1-cdn.bc0a.com/f00000000310757/www.fortinet.com/content/dam/fortinet/images/cyberglossary/types-of-cyberattacks.png",
+      "img_format": "PNG",
+      "mode": "P",
+      "file_size": 49451,
+      "width": 978,
+      "height": 641,
+      "total_pixels": 626898,
+      "basic_score": 0.8727671442538397,
+      "file_name": "cyber_threats_0.png"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية للتهديدات السيبرانية والحماية التقنية",
+    "image_info": {
+      "url": "https://www.stealthlabs.com/wp-content/uploads/2020/12/cybersecurity-best-practices-to-protect-from-cyber-threats.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 89374,
+      "width": 700,
+      "height": 482,
+      "total_pixels": 337400,
+      "basic_score": 0.805662638756518,
+      "file_name": "cyber_threats_9.jpg"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية للتهديدات السيبرانية والحماية التقنية",
+    "image_info": {
+      "url": "https://geeks.co.uk/wp-content/uploads/2019/03/CG_Infographic_V02.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 357580,
+      "width": 1920,
+      "height": 1080,
+      "total_pixels": 2073600,
+      "basic_score": 0.7364495733696163,
+      "file_name": "cyber_threats_2.jpg"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لهجمات XSS وطرق منعها",
+    "image_info": {
+      "url": "https://media.geeksforgeeks.org/wp-content/uploads/20190516152959/Cross-Site-ScriptingXSS.png",
+      "img_format": "PNG",
+      "mode": "RGB",
+      "file_size": 105535,
+      "width": 1200,
+      "height": 737,
+      "total_pixels": 884400,
+      "basic_score": 0.9141755326862075,
+      "file_name": "xss_prevention_3.png"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لهجمات XSS وطرق منعها",
+    "image_info": {
+      "url": "https://marvel-b1-cdn.bc0a.com/f00000000310757/www.fortinet.com/content/dam/fortinet/images/cyberglossary/xss.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 64949,
+      "width": 978,
+      "height": 640,
+      "total_pixels": 625920,
+      "basic_score": 0.8842432575862873,
+      "file_name": "xss_prevention_6.jpg"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لهجمات XSS وطرق منعها",
+    "image_info": {
+      "url": "https://www.vmware.com/media/blt8c9a8aaca0ffd4ac/blt5255a8008be895b9/66d06a18f6c3d10f63f287f2/cross-site-scripting-diagram.png",
+      "img_format": "PNG",
+      "mode": "P",
+      "file_size": 12255,
+      "width": 863,
+      "height": 487,
+      "total_pixels": 420281,
+      "basic_score": 0.8124413701460721,
+      "file_name": "xss_prevention_9.png"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية للـ Trusted Types في تطوير الويب الآمن",
+    "image_info": {
+      "url": "https://images.ctfassets.net/23aumh6u8s0i/5gieAxw4n3rxYsyjaAnhGm/aa67599b991ad67b3241bf730fc2a131/security_programming_hero.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 383308,
+      "width": 1178,
+      "height": 1056,
+      "total_pixels": 1243968,
+      "basic_score": 0.9355656918468983,
+      "file_name": "trusted_types_7.jpg"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية للـ Trusted Types في تطوير الويب الآمن",
+    "image_info": {
+      "url": "https://media2.dev.to/dynamic/image/width=1080,height=1080,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn7cc0flqtbe919kg7qrk.png",
+      "img_format": "WEBP",
+      "mode": "RGB",
+      "file_size": 115914,
+      "width": 1080,
+      "height": 1080,
+      "total_pixels": 1166400,
+      "basic_score": 0.9317617343491739,
+      "file_name": "trusted_types_0.png"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية للـ Trusted Types في تطوير الويب الآمن",
+    "image_info": {
+      "url": "https://andrewlock.net/content/images/2025/trusted_types_banner.png",
+      "img_format": "PNG",
+      "mode": "P",
+      "file_size": 20404,
+      "width": 1200,
+      "height": 800,
+      "total_pixels": 960000,
+      "basic_score": 0.9149369468078001,
+      "file_name": "trusted_types_3.png"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لرمز الحماية والأمان السيبراني لمشروع أمان المحتوى",
+    "image_info": {
+      "url": "https://www.alliancetek.com/blog/image.axd?picture=2023%2F4%2F319.+Content+Security+Policy+(CSP)+%26+its+Importance.png",
+      "img_format": "PNG",
+      "mode": "RGBA",
+      "file_size": 783040,
+      "width": 1200,
+      "height": 630,
+      "total_pixels": 756000,
+      "basic_score": 0.9371562827052231,
+      "file_name": "security_shield_1.axd"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لرمز الحماية والأمان السيبراني لمشروع أمان المحتوى",
+    "image_info": {
+      "url": "https://protocolguard.com/resources/wp-content/uploads/2023/11/Content-Security-Policy-CSP-HTTP-Header-Explained.webp",
+      "img_format": "WEBP",
+      "mode": "RGB",
+      "file_size": 64060,
+      "width": 1200,
+      "height": 628,
+      "total_pixels": 753600,
+      "basic_score": 0.9120299095297689,
+      "file_name": "security_shield_4.webp"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لرمز الحماية والأمان السيبراني لمشروع أمان المحتوى",
+    "image_info": {
+      "url": "https://eloquent-festival-6ad5e31a6a.media.strapiapp.com/what_is_csp_29b528191f.png",
+      "img_format": "PNG",
+      "mode": "P",
+      "file_size": 29863,
+      "width": 816,
+      "height": 1056,
+      "total_pixels": 861696,
+      "basic_score": 0.8905223346879828,
+      "file_name": "security_shield_2.png"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لشهادة SSL/HTTPS وأمان الويب",
+    "image_info": {
+      "url": "https://www.itarian.com/blog/wp-content/uploads/2025/06/what-is-ssl.png",
+      "img_format": "PNG",
+      "mode": "RGB",
+      "file_size": 1784371,
+      "width": 1536,
+      "height": 1024,
+      "total_pixels": 1572864,
+      "basic_score": 0.8232661634718084,
+      "file_name": "ssl_security_5.png"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لشهادة SSL/HTTPS وأمان الويب",
+    "image_info": {
+      "url": "https://websitedepot.com/wp-content/uploads/2017/09/What-is-an-SSL-Certificate-and-how-does-It-Work.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 78381,
+      "width": 800,
+      "height": 460,
+      "total_pixels": 368000,
+      "basic_score": 0.81395921257584,
+      "file_name": "ssl_security_7.jpg"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لشهادة SSL/HTTPS وأمان الويب",
+    "image_info": {
+      "url": "https://media.geeksforgeeks.org/wp-content/uploads/20250801143329769220/what_is_ssl_certificate_.webp",
+      "img_format": "WEBP",
+      "mode": "RGB",
+      "file_size": 14448,
+      "width": 800,
+      "height": 400,
+      "total_pixels": 320000,
+      "basic_score": 0.7871795758910557,
+      "file_name": "ssl_security_8.webp"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لحماية البيانات والخصوصية الرقمية",
+    "image_info": {
+      "url": "https://virtualcyberlabs.com/wp-content/uploads/2023/11/Data-Privacy.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 138276,
+      "width": 1200,
+      "height": 800,
+      "total_pixels": 960000,
+      "basic_score": 0.9367964970733705,
+      "file_name": "data_protection_5.jpg"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لحماية البيانات والخصوصية الرقمية",
+    "image_info": {
+      "url": "https://d2nzy1qhita6w.cloudfront.net/media/magefan_blog/data-privacy-IT-security-protection.jpeg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 271609,
+      "width": 1200,
+      "height": 669,
+      "total_pixels": 802800,
+      "basic_score": 0.9342512061750423,
+      "file_name": "data_protection_1.jpeg"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لحماية البيانات والخصوصية الرقمية",
+    "image_info": {
+      "url": "https://dataprivacymanager.net/wp-content/uploads/2020/08/visual-representation-of-data-privacy-and-data-security-areas.png",
+      "img_format": "PNG",
+      "mode": "RGBA",
+      "file_size": 54346,
+      "width": 1200,
+      "height": 628,
+      "total_pixels": 753600,
+      "basic_score": 0.8909886570752481,
+      "file_name": "data_protection_3.png"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لعنوان HTTP وأمان التطبيق الويب الحديث",
+    "image_info": {
+      "url": "https://zigrin.com/wp-content/uploads/2022/08/http-security-headers-1-1024x933.png",
+      "img_format": "PNG",
+      "mode": "RGBA",
+      "file_size": 225549,
+      "width": 1024,
+      "height": 933,
+      "total_pixels": 955392,
+      "basic_score": 0.9279848464595593,
+      "file_name": "web_security_0.png"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لعنوان HTTP وأمان التطبيق الويب الحديث",
+    "image_info": {
+      "url": "https://blogadmin.detectify.com/app/uploads/2019/02/without-XCTO-1.png",
+      "img_format": "PNG",
+      "mode": "RGBA",
+      "file_size": 75280,
+      "width": 1071,
+      "height": 675,
+      "total_pixels": 722925,
+      "basic_score": 0.8925626304714731,
+      "file_name": "web_security_8.png"
+    },
+    "llm_score": null
+  },
+  {
+    "query": "صورة توضيحية لعنوان HTTP وأمان التطبيق الويب الحديث",
+    "image_info": {
+      "url": "https://blog.pixelfreestudio.com/wp-content/uploads/2024/08/f5d0fb3690616e22c43894d44cf9165d_1645695339-1024x576.jpg",
+      "img_format": "JPEG",
+      "mode": "RGB",
+      "file_size": 43244,
+      "width": 1024,
+      "height": 576,
+      "total_pixels": 589824,
+      "basic_score": 0.8728681649193576,
+      "file_name": "web_security_4.jpg"
+    },
+    "llm_score": null
+  }
+]

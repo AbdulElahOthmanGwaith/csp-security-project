@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مركز القيادة السيبراني الغامر - Holographic Security Command Center</title>
+    <meta name="description" content="مركز قيادة سيبراني ثوري بتقنيات الواقع الافتراضي والمجسمات ثلاثية الأبعاد">
+    <meta name="keywords" content="أمن سيبراني, واقع افتراضي, أمان, تهديدات, مجسمات ثلاثية الأبعاد">
+    <meta name="author" content="MiniMax Agent">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" as="script">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%2322d3ee'/><circle cx='50' cy='50' r='20' fill='%23000000'/><circle cx='50' cy='50' r='10' fill='%2322d3ee'/></svg>">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="data:application/json,{'name':'مركز القيادة الغامر','short_name':'قيادة غامرة','description':'مركز قيادة سيبراني بتقنيات متقدمة','start_url':'/','display':'fullscreen','theme_color':'%23000000','background_color':'%23000000','orientation':'landscape'}">
+    
+    <!-- Critical CSS -->
+    <style>
+        /* Critical above-the-fold styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            background: #000000;
+            color: #f0f2f5;
+            overflow: hidden;
+            direction: rtl;
+        }
+        
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(45deg, #000000, #101012, #000000);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        
+        .loading-logo {
+            width: 120px;
+            height: 120px;
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .loading-orb {
+            width: 40px;
+            height: 40px;
+            background: #22d3ee;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 40px rgba(34, 211, 238, 0.8);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .loading-rings {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .loading-ring {
+            position: absolute;
+            border: 2px solid #22d3ee;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: rotate 3s linear infinite;
+        }
+        
+        .loading-ring:nth-child(1) {
+            width: 100%;
+            height: 100%;
+            animation-duration: 4s;
+        }
+        
+        .loading-ring:nth-child(2) {
+            width: 80%;
+            height: 80%;
+            top: 10%;
+            left: 10%;
+            animation-duration: 3s;
+        }
+        
+        .loading-ring:nth-child(3) {
+            width: 60%;
+            height: 60%;
+            top: 20%;
+            left: 20%;
+            animation-duration: 2s;
+        }
+        
+        .loading-text {
+            font-size: 24px;
+            font-weight: 600;
+            color: #22d3ee;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .loading-progress {
+            width: 300px;
+            height: 4px;
+            background: rgba(34, 211, 238, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .loading-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #22d3ee, #0891b2);
+            border-radius: 2px;
+            animation: progress 3s ease-out forwards;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.1); }
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes progress {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+        
+        .error-screen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #000000;
+            color: #f87171;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 10000;
+        }
+        
+        .error-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .error-message {
+            font-size: 16px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        
+        .error-button {
+            padding: 12px 24px;
+            background: #f87171;
+            color: #000000;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-logo">
+            <div class="loading-orb"></div>
+            <div class="loading-rings">
+                <div class="loading-ring"></div>
+                <div class="loading-ring"></div>
+                <div class="loading-ring"></div>
+            </div>
+        </div>
+        <div class="loading-text">تهيئة مركز القيادة السيبراني الغامر</div>
+        <div class="loading-progress">
+            <div class="loading-progress-bar"></div>
+        </div>
+    </div>
+    
+    <!-- Error Screen -->
+    <div class="error-screen" id="error-screen">
+        <div class="error-title">خطأ في التحميل</div>
+        <div class="error-message">
+            لم يتم تحميل النظام بشكل صحيح. يرجى التأكد من:
+            <br>• دعم المتصفح للرسوميات ثلاثية الأبعاد
+            • دعم WebGL
+            • اتصال الإنترنت مستقر
+        </div>
+        <button class="error-button" onclick="location.reload()">إعادة المحاولة</button>
+    </div>
+    
+    <!-- Main Application Container -->
+    <div id="app-container" style="display: none;">
+        <!-- The holographic command center will be inserted here by JavaScript -->
+    </div>
+    
+    <!-- System Information Panel (Hidden by default) -->
+    <div id="system-info" style="position: fixed; bottom: 10px; left: 10px; background: rgba(0,0,0,0.8); color: #22d3ee; padding: 8px 12px; border-radius: 4px; font-size: 11px; font-family: monospace; display: none; z-index: 1000;">
+        <div id="fps-counter">FPS: --</div>
+        <div id="memory-usage">Memory: -- MB</div>
+        <div id="webgl-info">WebGL: --</div>
+    </div>
+    
+    <!-- Emergency Stop Button -->
+    <button id="emergency-stop-btn" onclick="window.holographicCommand?.emergencyStop()" 
+            style="position: fixed; top: 20px; left: 20px; background: #f87171; color: white; border: none; border-radius: 50%; width: 60px; height: 60px; font-size: 16px; font-weight: bold; cursor: pointer; z-index: 1001; box-shadow: 0 4px 12px rgba(248, 113, 113, 0.4); display: none;">
+        🛑
+    </button>
+    
+    <!-- Performance Monitor Toggle -->
+    <button id="perf-toggle" onclick="togglePerformanceMonitor()" 
+            style="position: fixed; top: 20px; right: 20px; background: rgba(34, 211, 238, 0.1); color: #22d3ee; border: 1px solid #22d3ee; border-radius: 8px; padding: 8px 12px; font-size: 12px; cursor: pointer; z-index: 1001; display: none;">
+        مراقبة الأداء
+    </button>
+    
+    <!-- Scripts -->
+    <script>
+        // Global error handler
+        window.addEventListener('error', (event) => {
+            console.error('خطأ في النظام:', event.error);
+            showErrorScreen();
+        });
+        
+        // Performance monitoring
+        let performanceMonitor = {
+            fps: 0,
+            frameCount: 0,
+            lastTime: performance.now(),
+            
+            update() {
+                this.frameCount++;
+                const currentTime = performance.now();
+                
+                if (currentTime - this.lastTime >= 1000) {
+                    this.fps = Math.round((this.frameCount * 1000) / (currentTime - this.lastTime));
+                    this.frameCount = 0;
+                    this.lastTime = currentTime;
+                    this.updateDisplay();
+                }
+            },
+            
+            updateDisplay() {
+                const fpsEl = document.getElementById('fps-counter');
+                if (fpsEl) {
+                    fpsEl.textContent = `FPS: ${this.fps}`;
+                }
+            }
+        };
+        
+        // WebGL support detection
+        function checkWebGLSupport() {
+            try {
+                const canvas = document.createElement('canvas');
+                const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+                return !!gl;
+            } catch (e) {
+                return false;
+            }
+        }
+        
+        // Feature detection
+        function checkBrowserFeatures() {
+            const features = {
+                webgl: checkWebGLSupport(),
+                webxr: 'xr' in navigator,
+                webassembly: typeof WebAssembly === 'object',
+                webworkers: typeof Worker !== 'undefined',
+                mediaDevices: !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia),
+                webSpeech: 'webkitSpeechRecognition' in window || 'SpeechRecognition' in window,
+                localStorage: typeof Storage !== 'undefined'
+            };
+            
+            console.log('🔍 فحص ميزات المتصفح:', features);
+            return features;
+        }
+        
+        // Show error screen
+        function showErrorScreen() {
+            document.getElementById('loading-screen').style.display = 'none';
+            document.getElementById('error-screen').style.display = 'flex';
+        }
+        
+        // Initialize system
+        async function initializeSystem() {
+            try {
+                console.log('🚀 بدء تهيئة النظام...');
+                
+                // Check browser features
+                const features = checkBrowserFeatures();
+                
+                if (!features.webgl) {
+                    throw new Error('WebGL غير مدعوم');
+                }
+                
+                // Load Three.js if not already loaded
+                if (typeof THREE === 'undefined') {
+                    console.log('📦 تحميل Three.js...');
+                    await loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js');
+                }
+                
+                // Load main application
+                console.log('📦 تحميل التطبيق الرئيسي...');
+                await loadScript('./holographic-security-command.js');
+                
+                // Initialize application
+                console.log('🔧 تهيئة التطبيق...');
+                
+                // Hide loading screen
+                setTimeout(() => {
+                    document.getElementById('loading-screen').style.display = 'none';
+                    document.getElementById('app-container').style.display = 'block';
+                    document.getElementById('emergency-stop-btn').style.display = 'block';
+                    document.getElementById('perf-toggle').style.display = 'block';
+                    
+                    // Show performance monitor if in debug mode
+                    if (window.location.hash.includes('debug')) {
+                        document.getElementById('system-info').style.display = 'block';
+                    }
+                }, 3000);
+                
+                console.log('✅ تم تهيئة النظام بنجاح');
+                
+            } catch (error) {
+                console.error('❌ خطأ في تهيئة النظام:', error);
+                showErrorScreen();
+            }
+        }
+        
+        // Load script dynamically
+        function loadScript(src) {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = src;
+                script.onload = resolve;
+                script.onerror = reject;
+                document.head.appendChild(script);
+            });
+        }
+        
+        // Toggle performance monitor
+        function togglePerformanceMonitor() {
+            const systemInfo = document.getElementById('system-info');
+            systemInfo.style.display = systemInfo.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        // Memory usage monitoring
+        function updateMemoryUsage() {
+            if (performance.memory) {
+                const memoryEl = document.getElementById('memory-usage');
+                if (memoryEl) {
+                    const used = Math.round(performance.memory.usedJSHeapSize / 1024 / 1024);
+                    const total = Math.round(performance.memory.totalJSHeapSize / 1024 / 1024);
+                    memoryEl.textContent = `Memory: ${used}/${total} MB`;
+                }
+            }
+        }
+        
+        // WebGL info
+        function updateWebGLInfo() {
+            const webglEl = document.getElementById('webgl-info');
+            if (webglEl) {
+                try {
+                    const canvas = document.createElement('canvas');
+                    const gl = canvas.getContext('webgl');
+                    if (gl) {
+                        const renderer = gl.getParameter(gl.RENDERER);
+                        const vendor = gl.getParameter(gl.VENDOR);
+                        webglEl.textContent = `WebGL: ${renderer} (${vendor})`;
+                    }
+                } catch (e) {
+                    webglEl.textContent = 'WebGL: Error';
+                }
+            }
+        }
+        
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (event) => {
+            // Emergency stop (Ctrl + Shift + E)
+            if (event.ctrlKey && event.shiftKey && event.key === 'E') {
+                window.holographicCommand?.emergencyStop();
+            }
+            
+            // Performance monitor (Ctrl + Shift + P)
+            if (event.ctrlKey && event.shiftKey && event.key === 'P') {
+                togglePerformanceMonitor();
+            }
+            
+            // Fullscreen (F11)
+            if (event.key === 'F11') {
+                event.preventDefault();
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen();
+                } else {
+                    document.exitFullscreen();
+                }
+            }
+        });
+        
+        // Auto-save configuration
+        function saveConfiguration() {
+            try {
+                const config = {
+                    timestamp: new Date().toISOString(),
+                    userAgent: navigator.userAgent,
+                    screen: {
+                        width: screen.width,
+                        height: screen.height,
+                        colorDepth: screen.colorDepth
+                    },
+                    viewport: {
+                        width: window.innerWidth,
+                        height: window.innerHeight
+                    }
+                };
+                
+                localStorage.setItem('holographicCommandConfig', JSON.stringify(config));
+            } catch (error) {
+                console.warn('تعذر حفظ الإعدادات:', error);
+            }
+        }
+        
+        // Load configuration
+        function loadConfiguration() {
+            try {
+                const saved = localStorage.getItem('holographicCommandConfig');
+                if (saved) {
+                    const config = JSON.parse(saved);
+                    console.log('📁 تم تحميل الإعدادات المحفوظة:', config.timestamp);
+                }
+            } catch (error) {
+                console.warn('تعذر تحميل الإعدادات:', error);
+            }
+        }
+        
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('🌐 DOM جاهز، بدء التهيئة...');
+            
+            loadConfiguration();
+            saveConfiguration();
+            initializeSystem();
+            
+            // Update memory usage periodically
+            setInterval(updateMemoryUsage, 2000);
+            
+            // Update WebGL info
+            setTimeout(updateWebGLInfo, 1000);
+            
+            // Save configuration periodically
+            setInterval(saveConfiguration, 30000);
+        });
+        
+        // Handle visibility changes
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                console.log('📱 التطبيق في الخلفية');
+            } else {
+                console.log('📱 التطبيق في المقدمة');
+                updateWebGLInfo();
+            }
+        });
+        
+        // Handle window focus/blur
+        window.addEventListener('focus', () => {
+            performanceMonitor.lastTime = performance.now();
+        });
+        
+        // Service Worker registration for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+    
+    <!-- Progressive Web App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="قيادة غامرة">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="مركز القيادة السيبراني الغامر">
+    <meta property="og:description" content="مركز قيادة سيبراني ثوري بتقنيات الواقع الافتراضي والمجسمات ثلاثية الأبعاد">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%2322d3ee'/><circle cx='50' cy='50' r='20' fill='%23000000'/><circle cx='50' cy='50' r='10' fill='%2322d3ee'/></svg>">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="مركز القيادة السيبراني الغامر">
+    <meta name="twitter:description" content="مركز قيادة سيبراني ثوري بتقنيات متقدمة">
+    <meta name="twitter:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%2322d3ee'/><circle cx='50' cy='50' r='20' fill='%23000000'/><circle cx='50' cy='50' r='10' fill='%2322d3ee'/></svg>">
+</head>
+<body>
+</body>
+</html>
