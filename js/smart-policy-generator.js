@@ -68,6 +68,16 @@ class SmartPolicyGenerator {
                     'Cross-Origin-Embedder-Policy': 'require-corp',
                     'Referrer-Policy': 'strict-origin-when-cross-origin'
                 }
+            },
+            ai_integrated: {
+                name: 'تطبيقات الذكاء الاصطناعي 2026',
+                description: 'سياسة مخصصة للتطبيقات التي تدمج نماذج الذكاء الاصطناعي',
+                csp: "default-src 'self'; connect-src 'self' https://api.openai.com https://api.anthropic.com; img-src 'self' data: blob:; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:;",
+                headers: {
+                    'Content-Security-Policy': '',
+                    'X-Content-Type-Options': 'nosniff',
+                    'Permissions-Policy': 'browsing-topics=()'
+                }
             }
         };
 
