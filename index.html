@@ -162,7 +162,7 @@ Content-Security-Policy:
             </div>
             
             <div id="csp-generator" class="tool-card">
-                <h3>مولد سياسة أمان المحتوى (CSP Generator)</h3>
+                <h3>مولد سياسة أمان المحتوى (CSP Generator) - 2026</h3>
                 <div class="generator-grid">
                     <div class="generator-inputs">
                         <div class="input-group">
@@ -181,10 +181,24 @@ Content-Security-Policy:
                                 <input type="checkbox" id="script-eval"> <label>'unsafe-eval'</label>
                             </div>
                         </div>
+                        <div class="input-group">
+                            <label>خيارات متقدمة (2026)</label>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="strict-mode"> <label>Strict CSP (استخدام nonce)</label>
+                                <input type="checkbox" id="trusted-types"> <label>Trusted Types (منع DOM XSS)</label>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Reporting API (اختياري)</label>
+                            <input type="text" id="report-to" placeholder="مثال: csp-endpoint">
+                        </div>
                         <button id="generate-csp" class="btn btn-primary">توليد السياسة</button>
                     </div>
                     <div class="generator-output">
-                        <label>السياسة الناتجة:</label>
+                        <div class="output-header">
+                            <label>السياسة الناتجة:</label>
+                            <button id="copy-csp-btn" class="btn btn-secondary btn-small" style="display: none;">📋 نسخ الكود</button>
+                        </div>
                         <div class="output-box" id="csp-result">
                             Content-Security-Policy: default-src 'self';
                         </div>
