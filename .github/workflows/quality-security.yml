@@ -1,0 +1,85 @@
+name: Quality and security checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Reproducible checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install locked dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -f pnpm-lock.yaml ]; then
+            npm install --global pnpm@10
+            pnpm install --frozen-lockfile
+          elif [ -f package-lock.json ]; then
+            npm ci
+          elif [ -f package.json ] && grep -Eq '"(dependencies|devDependencies|optionalDependencies)"[[:space:]]*:' package.json; then
+            npm install --no-package-lock --ignore-scripts --no-audit --no-fund
+          fi
+
+      - name: Validate tracked JavaScript syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -d '' files < <(git ls-files -z -- '*.js')
+          for file in "${files[@]}"; do
+            node --check "$file"
+          done
+
+      - name: Run regression tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -d tests ]; then
+            while IFS= read -r -d '' file; do
+              node "$file"
+            done < <(find tests -maxdepth 1 -type f -name '*regression*.cjs' -print0 | sort -z)
+          fi
+
+      - name: Run package checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -f package.json ]; then exit 0; fi
+          runner=npm
+          if [ -f pnpm-lock.yaml ]; then runner=pnpm; fi
+          has_script() {
+            value=$("$runner" pkg get "scripts.$1" 2>/dev/null || printf 'null')
+            [ "$value" != 'null' ] && [ "$value" != '{}' ] && [ "$value" != '""' ]
+          }
+          if has_script test; then "$runner" run test --if-present; fi
+          if has_script lint; then "$runner" run lint; fi
+          if has_script check; then "$runner" run check; fi
+          if has_script typecheck; then "$runner" run typecheck; fi
+          if has_script build; then "$runner" run build; fi
+
+      - name: Compile tracked Python sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -d '' files < <(git ls-files -z -- '*.py')
+          if [ "${#files[@]}" -gt 0 ]; then
+            python3 -m py_compile "${files[@]}"
+          fi

@@ -133,7 +133,7 @@ class CSPTools {
         if (errors.length > 0) {
             validationHtml += '<div class="validation-errors">';
             errors.forEach(error => {
-                validationHtml += `<div class="alert alert-error">${error}</div>`;
+                validationHtml += `<div class="alert alert-error">${SecurityUtils.escapeHtml(error)}</div>`;
             });
             validationHtml += '</div>';
         }
@@ -141,7 +141,7 @@ class CSPTools {
         if (warnings.length > 0) {
             validationHtml += '<div class="validation-warnings">';
             warnings.forEach(warning => {
-                validationHtml += `<div class="alert alert-warning">${warning}</div>`;
+                validationHtml += `<div class="alert alert-warning">${SecurityUtils.escapeHtml(warning)}</div>`;
             });
             validationHtml += '</div>';
         }
@@ -202,7 +202,7 @@ class CSPTools {
             const validation = await this.performCSPValidation(csp);
             this.displayValidationResults(validation, resultsContainer);
         } catch (error) {
-            resultsContainer.innerHTML = `<div class="alert alert-error">خطأ في التحقق: ${error.message}</div>`;
+            resultsContainer.innerHTML = `<div class="alert alert-error">خطأ في التحقق: ${SecurityUtils.escapeHtml(error.message)}</div>`;
         }
     }
 
@@ -346,7 +346,7 @@ class CSPTools {
                 <div class="validation-issues">
                     <h4>⚠️ المشاكل المكتشفة</h4>
                     <ul>
-                        ${validation.issues.map(issue => `<li>${issue}</li>`).join('')}
+                        ${validation.issues.map(issue => `<li>${SecurityUtils.escapeHtml(issue)}</li>`).join('')}
                     </ul>
                 </div>
             `;
@@ -357,7 +357,7 @@ class CSPTools {
                 <div class="validation-recommendations">
                     <h4>💡 التوصيات</h4>
                     <ul>
-                        ${validation.recommendations.map(rec => `<li>${rec}</li>`).join('')}
+                        ${validation.recommendations.map(rec => `<li>${SecurityUtils.escapeHtml(rec)}</li>`).join('')}
                     </ul>
                 </div>
             `;
@@ -412,7 +412,7 @@ class CSPTools {
             const headers = await this.simulateHeaderCheck(url);
             this.displayHeaderResults(headers, resultsContainer);
         } catch (error) {
-            resultsContainer.innerHTML = `<div class="alert alert-error">خطأ في فحص الرؤوس: ${error.message}</div>`;
+            resultsContainer.innerHTML = `<div class="alert alert-error">خطأ في فحص الرؤوس: ${SecurityUtils.escapeHtml(error.message)}</div>`;
         }
     }
 
@@ -448,7 +448,7 @@ class CSPTools {
         let html = `
             <div class="headers-summary">
                 <h4>🛡️ فحص رؤوس الأمان</h4>
-                <p>الموقع: ${document.getElementById('siteUrl')?.value || 'الموقع الحالي'}</p>
+                <p>الموقع: ${SecurityUtils.escapeHtml(document.getElementById('siteUrl')?.value || 'الموقع الحالي')}</p>
             </div>
         `;
 
@@ -524,7 +524,7 @@ class CSPTools {
             const vulnerabilities = await this.simulateVulnerabilityScan(url);
             this.displayVulnerabilityResults(vulnerabilities, resultsContainer);
         } catch (error) {
-            resultsContainer.innerHTML = `<div class="alert alert-error">خطأ في فحص الثغرات: ${error.message}</div>`;
+            resultsContainer.innerHTML = `<div class="alert alert-error">خطأ في فحص الثغرات: ${SecurityUtils.escapeHtml(error.message)}</div>`;
         }
     }
 
@@ -573,7 +573,7 @@ class CSPTools {
         let html = `
             <div class="scan-summary">
                 <h4>🔍 نتائج فحص الثغرات</h4>
-                <p>الموقع: ${document.getElementById('scanUrl')?.value || 'الموقع الحالي'}</p>
+                <p>الموقع: ${SecurityUtils.escapeHtml(document.getElementById('scanUrl')?.value || 'الموقع الحالي')}</p>
                 <p>عدد الثغرات المكتشفة: ${vulnerabilities.length}</p>
             </div>
         `;
@@ -598,15 +598,15 @@ class CSPTools {
                 html += `
                     <div class="vulnerability-item vulnerability-${severityClass}">
                         <div class="vulnerability-header">
-                            <h5>${vuln.title}</h5>
+                            <h5>${SecurityUtils.escapeHtml(vuln.title)}</h5>
                             <span class="vulnerability-severity severity-${severityClass}">
                                 ${severityText}
                             </span>
-                            <span class="vulnerability-type">${vuln.type}</span>
+                            <span class="vulnerability-type">${SecurityUtils.escapeHtml(vuln.type)}</span>
                         </div>
-                        <p>${vuln.description}</p>
+                        <p>${SecurityUtils.escapeHtml(vuln.description)}</p>
                         <div class="vulnerability-recommendation">
-                            <strong>التوصية:</strong> ${vuln.recommendation}
+                            <strong>التوصية:</strong> ${SecurityUtils.escapeHtml(vuln.recommendation)}
                         </div>
                     </div>
                 `;
